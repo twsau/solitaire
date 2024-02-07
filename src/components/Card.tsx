@@ -4,7 +4,7 @@ import { FC } from "react";
 import { ClassNameValue } from "tailwind-merge";
 
 const cardStyle: ClassNameValue =
-  "w-[104px] h-[132px] bg-cover animate-place-card transition-all shadow-none hover:scale-105";
+  "opacity-0 w-[104px] h-[132px] bg-cover animate-place-card transition-all group-hover:scale-105";
 
 const faces: Record<CardSuit, Record<CardValue, ClassNameValue>> = {
   hearts: {
@@ -80,17 +80,20 @@ const backs = {
   8: "bg-card-back-8",
 };
 
-const FaceDown: FC = () => {
+interface Props {
+  card: Card;
+  animationDelay?: number;
+}
+
+export const Card: FC<Props> = ({ animationDelay = 0, card }) => {
   const { deckStyle } = useSettings();
-  const back = backs[deckStyle];
+  const sprite =
+    card.facing === "down" ? backs[deckStyle] : faces[card.suit][card.value];
 
-  return <div className={cn(cardStyle, back)} />;
-};
-
-export const Card: FC<Card> = (card) => {
-  if (card.facing === "down") return <FaceDown />;
-
-  const face = faces[card.suit][card.value];
-
-  return <button className={cn(cardStyle, face)} />;
+  return (
+    <button
+      className={cn(cardStyle, sprite)}
+      style={{ animationDelay: animationDelay + "ms" }}
+    />
+  );
 };

@@ -131,14 +131,17 @@ module.exports = {
         "place-card": {
           from: {
             opacity: 0,
-            transform: "translateY(100%) scale(1.5)",
+            transform: "translateY(-100%) scale(1.5)",
+          },
+          to: {
+            opacity: 1,
           },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "place-card": "place-card 0.2s ease-in-out",
+        "place-card": "place-card 0.2s ease-in-out forwards",
       },
     },
   },
