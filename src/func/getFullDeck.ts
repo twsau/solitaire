@@ -1,5 +1,5 @@
 export default function getFullDeck(): CardStack {
-  const hand = new Set<Card>();
+  const hand: Card[] = [];
 
   for (let v = 1; v < 14; v++) {
     const suits: CardSuit[] = ["hearts", "diamonds", "clubs", "spades"];
@@ -8,7 +8,7 @@ export default function getFullDeck(): CardStack {
       const value = v as CardValue;
       const suit = suits[s];
 
-      hand.add({
+      hand.push({
         value,
         suit,
         facing: "down",

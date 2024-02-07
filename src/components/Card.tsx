@@ -4,7 +4,7 @@ import { FC } from "react";
 import { ClassNameValue } from "tailwind-merge";
 
 const cardStyle: ClassNameValue =
-  "w-[104px] h-[132px] bg-cover animate-place-card transition-all group-hover:-translate-y-4 group-hover:-rotate-6";
+  "w-[52px] h-[67px] bg-cover transition-all group-hover:-translate-y-4 group-hover:-rotate-6";
 
 const faces: Record<CardSuit, Record<CardValue, ClassNameValue>> = {
   hearts: {
@@ -82,18 +82,12 @@ const backs = {
 
 interface Props {
   card: Card;
-  animationDuration?: number;
 }
 
-export const Card: FC<Props> = ({ animationDuration = 200, card }) => {
+export const Card: FC<Props> = ({ card }) => {
   const { deckStyle } = useSettings();
   const sprite =
     card.facing === "down" ? backs[deckStyle] : faces[card.suit][card.value];
 
-  return (
-    <button
-      className={cn(cardStyle, sprite)}
-      style={{ animationDuration: animationDuration + "ms" }}
-    />
-  );
+  return <button className={cn(cardStyle, sprite)} />;
 };
