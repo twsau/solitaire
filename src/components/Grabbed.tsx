@@ -23,7 +23,7 @@ export const Grabbed: FC = () => {
 
   return (
     <div
-      className="grid place-items-center rounded min-w-[52px] transition-transform min-h-[67px] fixed -translate-y-full rotate-12 scale-75"
+      className="grid place-items-center rounded min-w-[68px] transition-transform min-h-[100px] fixed -translate-y-full rotate-12 scale-75"
       style={{ left: cursor.left, top: cursor.top }}
     >
       <Stack cards={grabbed} />

@@ -6,6 +6,7 @@ import { Hand } from "./components/Hand";
 import { Waste } from "./components/Waste";
 import { Bordered } from "./components/Bordered";
 import { Tableau } from "./components/Tableau";
+import { Foundation } from "./components/Foundation";
 
 export const App = () => {
   const game = useGame();
@@ -29,10 +30,11 @@ export const App = () => {
             <Waste />
           </Bordered>
           <Bordered hidden />
-          <Bordered></Bordered>
-          <Bordered></Bordered>
-          <Bordered></Bordered>
-          <Bordered></Bordered>
+          {game.foundations.map((_, index) => (
+            <Bordered key={`foundation-${index}`}>
+              <Foundation index={index} />
+            </Bordered>
+          ))}
         </div>
         <div className="flex justify-evenly">
           {game.tableau.map((_, index) => (

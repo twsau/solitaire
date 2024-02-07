@@ -8,7 +8,7 @@ interface Game {
   hand: CardStack;
   waste: CardStack;
   tableau: CardStack[];
-  foundations: [CardStack, CardStack, CardStack, CardStack];
+  foundations: CardStack[];
 }
 
 const initialState: Game = {

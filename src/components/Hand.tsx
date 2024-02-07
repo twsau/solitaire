@@ -3,15 +3,16 @@ import { FC } from "react";
 import { Stack } from "./Stack";
 
 export const Hand: FC = () => {
-  const { grabbed, hand } = useGame();
+  const { hand, waste } = useGame();
 
   const handleClick = () => {
-    if (!hand.length || grabbed.length) return;
+    if (!hand.length) return;
+
     const card = hand.pop() as Card;
     card.facing = "up";
-    grabbed.push(card);
+    waste.push(card);
 
-    useGame.setState({ grabbed, hand });
+    useGame.setState({ hand, waste });
   };
 
   return <Stack cards={hand} onClick={handleClick} />;

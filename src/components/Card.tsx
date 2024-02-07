@@ -4,9 +4,9 @@ import { FC } from "react";
 import { ClassNameValue } from "tailwind-merge";
 
 const cardStyle: ClassNameValue =
-  "w-[52px] h-[67px] bg-cover transition-all group-hover:scale-105";
+  "w-[68px] h-[100px] bg-cover transition-all group-hover:scale-105";
 
-const faces: Record<CardSuit, Record<CardValue, ClassNameValue>> = {
+const faces: Record<CardSuit, Record<number, ClassNameValue>> = {
   hearts: {
     1: "bg-card-hearts-1",
     2: "bg-card-hearts-2",
