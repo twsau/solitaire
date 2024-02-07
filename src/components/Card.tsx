@@ -2,7 +2,9 @@ import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { ClassNameValue } from "tailwind-merge";
 
-const cardStyle: ClassNameValue = "w-[104px] h-[132px] bg-cover";
+const cardStyle: ClassNameValue =
+  "w-[104px] h-[132px] bg-cover animate-place-card transition-all shadow-none hover:scale-105";
+
 const faces: Record<CardSuit, Record<CardValue, ClassNameValue>> = {
   hearts: {
     1: "bg-card-hearts-1",
@@ -73,5 +75,5 @@ export const Card: FC<Card> = (card) => {
 
   const face = faces[card.suit][card.value];
 
-  return <div className={cn(cardStyle, face)} />;
+  return <button className={cn(cardStyle, face)} />;
 };
