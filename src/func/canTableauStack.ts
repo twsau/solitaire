@@ -2,6 +2,7 @@ export default function canTableauStack(
   topCard: Card,
   bottomCard: Card
 ): boolean {
+  if (topCard.facing === "down" || bottomCard.facing === "down") return false;
   switch (topCard.suit) {
     case "hearts":
     case "diamonds":

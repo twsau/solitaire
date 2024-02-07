@@ -26,7 +26,7 @@ export const Grabbed: FC = () => {
       className="grid place-items-center rounded min-w-[68px] transition-transform min-h-[100px] fixed -translate-y-full rotate-12 scale-75"
       style={{ left: cursor.left, top: cursor.top }}
     >
-      <Stack cards={grabbed} />
+      <Stack cards={grabbed} spread />
     </div>
   );
 };

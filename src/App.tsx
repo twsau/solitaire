@@ -37,9 +37,60 @@ export const App = () => {
           ))}
         </div>
         <div className="flex justify-evenly">
-          {game.tableau.map((_, index) => (
-            <Tableau key={`tableau-${index}`} index={index} />
-          ))}
+          <Tableau
+            cards={game.tableau_1}
+            onChange={(
+              cards: Card[],
+              grabbed: Card[],
+              grabbedFrom: string = ""
+            ) => useGame.setState({ grabbed, grabbedFrom, tableau_1: cards })}
+          />
+          <Tableau
+            cards={game.tableau_2}
+            onChange={(
+              cards: Card[],
+              grabbed: Card[],
+              grabbedFrom: string = ""
+            ) => useGame.setState({ grabbed, grabbedFrom, tableau_2: cards })}
+          />
+          <Tableau
+            cards={game.tableau_3}
+            onChange={(
+              cards: Card[],
+              grabbed: Card[],
+              grabbedFrom: string = ""
+            ) => useGame.setState({ grabbed, grabbedFrom, tableau_3: cards })}
+          />
+          <Tableau
+            cards={game.tableau_4}
+            onChange={(cards: Card[], grabbed: Card[], grabbedFrom: string) =>
+              useGame.setState({ grabbed, grabbedFrom, tableau_4: cards })
+            }
+          />
+          <Tableau
+            cards={game.tableau_5}
+            onChange={(
+              cards: Card[],
+              grabbed: Card[],
+              grabbedFrom: string = ""
+            ) => useGame.setState({ grabbed, grabbedFrom, tableau_5: cards })}
+          />
+          <Tableau
+            cards={game.tableau_6}
+            onChange={(
+              cards: Card[],
+              grabbed: Card[],
+              grabbedFrom: string = ""
+            ) => useGame.setState({ grabbed, grabbedFrom, tableau_6: cards })}
+          />
+          <Tableau
+            cards={game.tableau_7}
+            onChange={(
+              cards: Card[],
+              grabbed: Card[],
+              grabbedFrom: string = ""
+            ) => useGame.setState({ grabbed, grabbedFrom, tableau_7: cards })}
+          />
         </div>
         <Grabbed />
       </main>
