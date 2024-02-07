@@ -2,7 +2,7 @@ import { FC, useMemo } from "react";
 import { Card } from "./Card";
 import { cn } from "@/lib/utils";
 
-const ANIMATION_DURATION = 500;
+const ANIMATION_DURATION = 200;
 
 export const Hand: FC<{ cards: CardStack }> = ({ cards }) => {
   const hand = [...cards];
@@ -22,7 +22,7 @@ export const Hand: FC<{ cards: CardStack }> = ({ cards }) => {
           }}
         >
           <Card
-            animationDelay={index * (ANIMATION_DURATION / hand.length)}
+            animationDuration={index * (ANIMATION_DURATION / hand.length)}
             card={card}
             key={`stack-${stackId}-${index}`}
           />
