@@ -2,22 +2,31 @@ import { useGame } from "@/state";
 import { FC } from "react";
 import { Stack } from "./Stack";
 
-export const Waste: FC = () => {
-  const { grabbed, waste } = useGame();
+interface Props {
+  cards: Card[];
+  onChange: (stack: Card[], grabbed: Card[], grabbedFrom: string) => void;
+}
 
-  const handleClick = () => {
-    if (!waste.length) return;
+export const Waste: FC<Props> = ({ cards }) => {
+  const { grabbed, grabbedFrom } = useGame();
 
-    grabbed.push(waste.pop() as Card);
-    useGame.setState({ grabbed, waste });
+  const handleClick = (stack: Card[], stackId: string) => {
+    if (grabbed.length) return;
+    useGame.setState({
+      grabbed: stack,
+      grabbedFrom: stackId,
+      waste: cards.filter((card) => !stack.includes(card)),
+    });
   };
 
-  const handleDrop = () => {
-    if (!grabbed.length) return;
-
-    waste.push(grabbed.pop() as Card);
-    useGame.setState({ grabbed, waste });
+  const handleDrop = (_: Card[], stackId: string) => {
+    if (grabbedFrom !== stackId) return;
+    useGame.setState((state) => ({
+      grabbed: [],
+      grabbedFrom: "",
+      waste: [...state.waste, ...state.grabbed],
+    }));
   };
 
-  return <Stack cards={waste} onClick={handleClick} onDrop={handleDrop} />;
+  return <Stack cards={cards} onClick={handleClick} onDrop={handleDrop} />;
 };

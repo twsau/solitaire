@@ -13,12 +13,28 @@ export const Tableau: FC<Props> = ({ cards, onChange }) => {
 
   const handleClick = (stack: CardStack, stackId: string) => {
     if (grabbed.length) return;
+    const shouldFlip = cards[cards.length - 1].facing === "down";
 
-    onChange(
-      cards.filter((card) => !stack.includes(card)),
-      stack,
-      stackId
-    );
+    function flip() {
+      onChange(
+        cards.map((card, index) =>
+          index === cards.length - 1 ? { ...card, facing: "up" } : card
+        ),
+        [],
+        ""
+      );
+    }
+
+    function swap() {
+      onChange(
+        cards.filter((card) => !stack.includes(card)),
+        stack,
+        stackId
+      );
+    }
+
+    if (shouldFlip) flip();
+    else swap();
   };
 
   const handleDrop = (stack: CardStack, stackId: string) => {

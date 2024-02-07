@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo } from "react";
+import { FC, useMemo } from "react";
 import { Card } from "./Card";
 import { cn } from "@/lib/utils";
 import { useGame } from "@/state";
@@ -28,7 +28,7 @@ export const Stack: FC<Props> = ({
     >
       {unchained.map((card, index) => {
         const canGrab =
-          index === unchained.length - 1 && card.facing === "up" && onClick;
+          chained.length === 0 && index === unchained.length - 1 && onClick;
 
         return (
           <div

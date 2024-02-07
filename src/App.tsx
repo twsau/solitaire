@@ -27,7 +27,16 @@ export const App = () => {
             <Hand />
           </Bordered>
           <Bordered>
-            <Waste />
+            <Waste
+              cards={game.waste}
+              onChange={(cards: Card[], grabbed: Card[], grabbedFrom: string) =>
+                useGame.setState({
+                  grabbed,
+                  grabbedFrom,
+                  waste: cards,
+                })
+              }
+            />
           </Bordered>
           <Bordered hidden />
           {game.foundations.map((_, index) => (
