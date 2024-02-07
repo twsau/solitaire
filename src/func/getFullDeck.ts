@@ -1,7 +1,6 @@
 export default function getFullDeck(): CardStack {
   const hand = new Set<Card>();
 
-  // populate hand
   for (let v = 1; v < 14; v++) {
     const suits: CardSuit[] = ["hearts", "diamonds", "clubs", "spades"];
 
