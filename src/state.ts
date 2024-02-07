@@ -3,21 +3,16 @@ import shuffleCards from "./func/shuffleCards";
 import getFullDeck from "./func/getFullDeck";
 
 interface Game {
+  grabbed: CardStack;
+  grabbedFrom?: number;
   hand: CardStack;
   waste: CardStack;
-  tableau: [
-    CardStack,
-    CardStack,
-    CardStack,
-    CardStack,
-    CardStack,
-    CardStack,
-    CardStack
-  ];
+  tableau: CardStack[];
   foundations: [CardStack, CardStack, CardStack, CardStack];
 }
 
 const initialState: Game = {
+  grabbed: [],
   hand: shuffleCards(getFullDeck()),
   waste: [],
   tableau: [[], [], [], [], [], [], []],
@@ -25,6 +20,7 @@ const initialState: Game = {
 };
 
 export const useGame = create<Game>()(() => initialState);
+
 export const setGame = () => {
   const hand = useGame.getState().hand;
   const tableau = useGame.getState().tableau;
