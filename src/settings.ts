@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface Settings {
-  deckStyle: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  deckStyle: number;
 }
 
 const initialState: Settings = {
@@ -13,5 +13,5 @@ export const useSettings = create<Settings>()(
   persist(() => initialState, { name: "solitaire" })
 );
 
-export const chooseDeckStyle = (deckStyle: Settings["deckStyle"]) =>
+export const setDeckStyle = (deckStyle: Settings["deckStyle"]) =>
   useSettings.setState({ deckStyle });
