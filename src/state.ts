@@ -2,7 +2,7 @@ import { create } from "zustand";
 import shuffleCards from "./func/shuffleCards";
 import getFullDeck from "./func/getFullDeck";
 
-interface GameState {
+interface Game {
   hand: CardStack;
   waste: CardStack;
   tableau: [
@@ -17,7 +17,7 @@ interface GameState {
   foundations: [CardStack, CardStack, CardStack, CardStack];
 }
 
-const initialState: GameState = {
+const initialState: Game = {
   hand: shuffleCards(getFullDeck()),
   waste: new Set<Card>(),
   tableau: [
@@ -37,4 +37,4 @@ const initialState: GameState = {
   ],
 };
 
-export const useGameState = create<GameState>()(() => initialState);
+export const useGame = create<Game>()(() => initialState);
