@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { useSettings } from "@/settings";
 import { FC } from "react";
 import { ClassNameValue } from "tailwind-merge";
 
@@ -68,7 +69,23 @@ const faces: Record<CardSuit, Record<CardValue, ClassNameValue>> = {
   },
 };
 
-const FaceDown: FC = () => <div className={cn("bg-card-back-1", cardStyle)} />;
+const backs = {
+  1: "bg-card-back-1",
+  2: "bg-card-back-2",
+  3: "bg-card-back-3",
+  4: "bg-card-back-4",
+  5: "bg-card-back-5",
+  6: "bg-card-back-6",
+  7: "bg-card-back-7",
+  8: "bg-card-back-8",
+};
+
+const FaceDown: FC = () => {
+  const { deckStyle } = useSettings();
+  const back = backs[deckStyle];
+
+  return <div className={cn(cardStyle, back)} />;
+};
 
 export const Card: FC<Card> = (card) => {
   if (card.facing === "down") return <FaceDown />;
