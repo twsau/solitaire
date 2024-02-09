@@ -74,6 +74,7 @@ export default function moveCards<T extends Stack>(
   to: ExcludeStack<Stack, T>,
   origin?: Card
 ) {
+  if (origin?.facing === "down") return;
   const grabbed = useGame.getState().grabbed;
   if (to === "grabbed" && grabbed.length) return;
   const func = move[from][to];

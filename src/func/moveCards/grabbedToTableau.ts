@@ -5,10 +5,13 @@ export default function grabbedToTableau(ref: number) {
   useGame.setState((state) => {
     const key = `tableau_${ref}` as keyof typeof state;
     const tableau = state[key] as typeof state.tableau_1;
+    const topCard = state.grabbed[0];
+
+    if (!tableau.length && topCard.value !== 13) return state;
 
     if (
       state.grabbedFrom === key ||
-      (tableau.length === 0 && state.grabbed[0].value === 13)
+      (tableau.length === 0 && topCard.value === 13)
     )
       return {
         grabbed: [],
@@ -17,7 +20,6 @@ export default function grabbedToTableau(ref: number) {
       };
 
     const bottomCard = tableau[tableau.length - 1];
-    const topCard = state.grabbed[0];
 
     if (canTableauStack(topCard, bottomCard))
       return {

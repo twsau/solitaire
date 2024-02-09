@@ -1,7 +1,6 @@
 import { useGame } from "@/state/game";
 import { FC, useMemo } from "react";
 import { Card } from "./Card";
-import { cn } from "@/lib/utils";
 
 const SPREAD_PIXELS = {
   DEFAULT: 1.5,
@@ -18,19 +17,14 @@ interface Props {
 }
 
 export const CardStack: FC<Props> = ({
-  animate = true,
   cards,
   onDrop = () => {},
   onEmpty = () => {},
   onGrab = () => {},
   spread = false,
 }) => {
-  const id = useMemo(() => crypto.randomUUID() as string, []);
   const grabbed = useGame((state) => state.grabbed);
-  const cardStyle = useMemo(
-    () => cn("absolute inset-0", animate ? "animate-spread-stack" : ""),
-    [animate]
-  );
+  const cardStyle = useMemo(() => "absolute inset-0 animate-spread-stack", []);
 
   return (
     <div
@@ -44,7 +38,7 @@ export const CardStack: FC<Props> = ({
       {cards.map((card, index) => (
         <div
           className={cardStyle}
-          key={`stack-${id}-unchained-${index}`}
+          key={`${card.suit}-${card.value}-${index}`}
           onClick={() => {
             if (!grabbed.length) onGrab(card);
           }}

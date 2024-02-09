@@ -71,7 +71,7 @@ module.exports = {
               "translateY(-50%) translateX(-50%) scale(0.75) rotate(12deg)",
           },
         },
-        "spread-stack": {
+        card: {
           from: {
             transform: "scale(1.25) translateY(-50%)",
           },
@@ -81,7 +81,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         grabbed: "grabbed 0.2s ease-in-out forwards",
-        "spread-stack": "spread-stack 0.2s ease-in-out",
+        card: "card 0.2s ease-in-out",
       },
     },
   },
