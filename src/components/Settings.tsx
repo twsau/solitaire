@@ -15,7 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { setDeckStyle, useSettings } from "@/settings";
+import { setDeckStyle, useSettings } from "@/state/settings";
 import { Label } from "./ui/label";
 
 const DECK_STYLES = [

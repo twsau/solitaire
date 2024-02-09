@@ -1,4 +1,4 @@
-import { useGame } from "@/state";
+import { useGame } from "@/state/game";
 import { Bordered } from "../Bordered";
 import { CardStack } from "../CardStack";
 import moveCards from "@/func/moveCards";

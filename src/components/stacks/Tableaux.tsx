@@ -1,7 +1,6 @@
-import { useGame } from "@/state";
+import { useGame } from "@/state/game";
 import { CardStack } from "../CardStack";
 import moveCards from "@/func/moveCards";
-import { Profiler } from "react";
 
 type TableauKey =
   | "tableau_1"
@@ -15,22 +14,24 @@ type TableauKey =
 const Tableau = ({ tableau }: { tableau: TableauKey }) => {
   const cards = useGame()[tableau];
 
+  console.log(`render ${tableau}`);
+
   return (
-    <Profiler id={tableau} onRender={console.log}>
-      <CardStack
-        chainCards
-        spread
-        cards={cards}
-        onDrop={() => moveCards("grabbed", tableau)}
-        onGrab={(card: Card) => moveCards(tableau, "grabbed", card)}
-      />
-    </Profiler>
+    <CardStack
+      chainCards
+      spread
+      cards={cards}
+      onDrop={() => moveCards("grabbed", tableau)}
+      onGrab={(card: Card) => moveCards(tableau, "grabbed", card)}
+    />
   );
 };
 
 export const Tableaux = () => {
+  console.log("render tableaux");
+
   return (
-    <Profiler id="tableux" onRender={console.log}>
+    <div className="flex justify-evenly">
       <Tableau tableau="tableau_1" />
       <Tableau tableau="tableau_2" />
       <Tableau tableau="tableau_3" />
@@ -38,6 +39,6 @@ export const Tableaux = () => {
       <Tableau tableau="tableau_5" />
       <Tableau tableau="tableau_6" />
       <Tableau tableau="tableau_7" />
-    </Profiler>
+    </div>
   );
 };

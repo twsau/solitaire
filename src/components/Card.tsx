@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { useSettings } from "@/settings";
+import { useSettings } from "@/state/settings";
 import { FC } from "react";
 import { ClassNameValue } from "tailwind-merge";
 

@@ -1,4 +1,4 @@
-import { useGame } from "@/state";
+import { useGame } from "@/state/game";
 
 export default function handToWaste() {
   useGame.setState((state) => {

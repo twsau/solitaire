@@ -1,4 +1,4 @@
-import { useGame } from "@/state";
+import { useGame } from "@/state/game";
 import canFoundationStack from "../canFoundationStack";
 
 export default function grabbedToFoundation(ref: number) {

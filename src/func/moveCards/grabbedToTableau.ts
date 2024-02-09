@@ -1,4 +1,4 @@
-import { useGame } from "@/state";
+import { useGame } from "@/state/game";
 import canTableauStack from "../canTableauStack";
 
 export default function grabbedToTableau(ref: number) {

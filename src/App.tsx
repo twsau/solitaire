@@ -1,5 +1,5 @@
-import { Profiler, useEffect } from "react";
-import { setGame } from "./state";
+import { useEffect } from "react";
+import { setGame } from "./state/game";
 import { Settings } from "./components/Settings";
 import { Grabbed } from "./components/stacks/Grabbed";
 import { Bordered } from "./components/Bordered";
@@ -13,8 +13,10 @@ export const App = () => {
     setGame();
   }, []);
 
+  console.log("render app");
+
   return (
-    <Profiler id="app" onRender={console.log}>
+    <>
       <header className="container flex items-center h-14 border-b">
         <div className="ml-auto" />
         <Settings />
@@ -26,11 +28,9 @@ export const App = () => {
           <Bordered hidden />
           <Foundations />
         </div>
-        <div className="flex justify-evenly">
-          <Tableaux />
-        </div>
+        <Tableaux />
         <Grabbed />
       </main>
-    </Profiler>
+    </>
   );
 };

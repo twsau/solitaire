@@ -1,5 +1,5 @@
 import findChained from "@/func/findChained";
-import { useGame } from "@/state";
+import { useGame } from "@/state/game";
 import { FC, useMemo } from "react";
 import { ClassNameValue } from "tailwind-merge";
 import { Card } from "./Card";

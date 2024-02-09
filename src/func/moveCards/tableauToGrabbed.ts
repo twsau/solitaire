@@ -1,4 +1,4 @@
-import { useGame } from "@/state";
+import { useGame } from "@/state/game";
 
 export default function tableauToGrabbed(ref: number, origin?: Card) {
   useGame.setState((state) => {

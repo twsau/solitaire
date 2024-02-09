@@ -1,4 +1,4 @@
-import { useGame } from "@/state";
+import { useGame } from "@/state/game";
 
 export default function foundationToGrabbed(ref: number) {
   useGame.setState((state) => {

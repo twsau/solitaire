@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import shuffleCards from "./func/shuffleCards";
-import getFullDeck from "./func/getFullDeck";
+import shuffleCards from "../func/shuffleCards";
+import getFullDeck from "../func/getFullDeck";
 
 interface Game {
   grabbed: CardStack;
