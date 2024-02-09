@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Hand } from "@/components/Stack";
 import getFullDeck from "@/func/getFullDeck";
+import { Hand } from "@/components/stacks/Hand";
 
 const meta: Meta<typeof Hand> = {
   title: "Example/Hand",
