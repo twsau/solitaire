@@ -2,10 +2,7 @@ import { useEffect } from "react";
 import { setGame, useGame } from "./state";
 import { Settings } from "./components/Settings";
 import { Grabbed } from "./components/Grabbed";
-import { Hand } from "./components/Hand";
-import { Waste } from "./components/Waste";
 import { Bordered } from "./components/Bordered";
-import { Tableau } from "./components/Tableau";
 import { Foundation } from "./components/Foundation";
 import { CardStack } from "./components/CardStack";
 import moveCards from "./func/moveCards";
@@ -40,11 +37,34 @@ export const App = () => {
             />
           </Bordered>
           <Bordered hidden />
-          {game.foundations.map((_, index) => (
-            <Bordered key={`foundation-${index}`}>
-              <Foundation index={index} />
-            </Bordered>
-          ))}
+          <Bordered>
+            <CardStack
+              cards={game.foundation_1}
+              onDrop={() => moveCards("grabbed", "foundation_1")}
+              onGrab={() => moveCards("foundation_1", "grabbed")}
+            />
+          </Bordered>
+          <Bordered>
+            <CardStack
+              cards={game.foundation_2}
+              onDrop={() => moveCards("grabbed", "foundation_2")}
+              onGrab={() => moveCards("foundation_2", "grabbed")}
+            />
+          </Bordered>
+          <Bordered>
+            <CardStack
+              cards={game.foundation_3}
+              onDrop={() => moveCards("grabbed", "foundation_3")}
+              onGrab={() => moveCards("foundation_3", "grabbed")}
+            />
+          </Bordered>
+          <Bordered>
+            <CardStack
+              cards={game.foundation_4}
+              onDrop={() => moveCards("grabbed", "foundation_4")}
+              onGrab={() => moveCards("foundation_4", "grabbed")}
+            />
+          </Bordered>
         </div>
         <div className="flex justify-evenly">
           <CardStack

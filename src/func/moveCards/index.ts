@@ -1,3 +1,5 @@
+import foundationToGrabbed from "./foundationToGrabbed";
+import grabbedToFoundation from "./grabbedToFoundation";
 import grabbedToTableau from "./grabbedToTableau";
 import grabbedToWaste from "./grabbedToWaste";
 import handToWaste from "./handToWaste";
@@ -20,6 +22,10 @@ const move: MoveFromTo = {
     tableau_5: () => grabbedToTableau(5),
     tableau_6: () => grabbedToTableau(6),
     tableau_7: () => grabbedToTableau(7),
+    foundation_1: () => grabbedToFoundation(1),
+    foundation_2: () => grabbedToFoundation(2),
+    foundation_3: () => grabbedToFoundation(3),
+    foundation_4: () => grabbedToFoundation(4),
   },
   hand: {
     waste: handToWaste,
@@ -47,6 +53,18 @@ const move: MoveFromTo = {
   },
   tableau_7: {
     grabbed: (origin) => tableauToGrabbed(7, origin),
+  },
+  foundation_1: {
+    grabbed: () => foundationToGrabbed(1),
+  },
+  foundation_2: {
+    grabbed: () => foundationToGrabbed(2),
+  },
+  foundation_3: {
+    grabbed: () => foundationToGrabbed(3),
+  },
+  foundation_4: {
+    grabbed: () => foundationToGrabbed(4),
   },
 };
 

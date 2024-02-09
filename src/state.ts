@@ -14,7 +14,10 @@ interface Game {
   tableau_5: CardStack;
   tableau_6: CardStack;
   tableau_7: CardStack;
-  foundations: CardStack[];
+  foundation_1: Card[];
+  foundation_2: Card[];
+  foundation_3: Card[];
+  foundation_4: Card[];
 }
 
 const initialState: Game = {
@@ -29,7 +32,10 @@ const initialState: Game = {
   tableau_5: [],
   tableau_6: [],
   tableau_7: [],
-  foundations: [[], [], [], []],
+  foundation_1: [],
+  foundation_2: [],
+  foundation_3: [],
+  foundation_4: [],
 };
 
 export const useGame = create<Game>()(() => initialState);
