@@ -9,7 +9,6 @@ export default function splitStack(
 
     return [a, b];
   } else {
-    console.log("here");
     // Handle the case where the index is out of bounds
     console.error("Index out of bounds");
     return [[], arr];

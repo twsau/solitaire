@@ -13,7 +13,7 @@ export default function handToWaste() {
 
     const card = state.hand.pop() as Card;
     return {
-      hand: state.hand,
+      hand: [...state.hand],
       waste: [...state.waste, { ...card, facing: "up" }],
     };
   });

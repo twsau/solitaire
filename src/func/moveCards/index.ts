@@ -1,3 +1,4 @@
+import { useGame } from "@/state/game";
 import foundationToGrabbed from "./foundationToGrabbed";
 import grabbedToFoundation from "./grabbedToFoundation";
 import grabbedToTableau from "./grabbedToTableau";
@@ -73,6 +74,8 @@ export default function moveCards<T extends Stack>(
   to: ExcludeStack<Stack, T>,
   origin?: Card
 ) {
+  const grabbed = useGame.getState().grabbed;
+  if (to === "grabbed" && grabbed.length) return;
   const func = move[from][to];
 
   if (!func) console.error(`no move function found: ${from} -> ${to}`);

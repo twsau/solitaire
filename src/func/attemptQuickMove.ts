@@ -3,7 +3,6 @@ import moveCards from "./moveCards";
 import canFoundationStack from "./canFoundationStack";
 
 export default function attemptQuickMove() {
-  console.log("attempting quick move");
   const state = useGame.getState();
 
   // return if nothing grabbed
@@ -18,8 +17,6 @@ export default function attemptQuickMove() {
       | "foundation_3"
       | "foundation_4";
     const foundation = state[key];
-
-    console.log(foundation);
 
     if (!foundation.length && topCard.value === 1) {
       moveCards("grabbed", key);

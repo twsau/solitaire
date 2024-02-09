@@ -2,6 +2,7 @@ import { useGame } from "@/state/game";
 import { FC, useEffect } from "react";
 import { CardStack } from "../CardStack";
 import moveCards from "@/func/moveCards";
+import findChained from "@/func/findChained";
 
 interface Props {
   id:
@@ -28,13 +29,31 @@ export const Tableau: FC<Props> = ({ id }) => {
       });
   }, [cards, grabbed.length, id]);
 
+  const [chained, unchained] = findChained(cards);
+
+  const handleGrab = (origin: Card) => {
+    if (origin.facing === "down") return;
+    moveCards(id, "grabbed", origin);
+  };
+
   return (
-    <CardStack
-      chainCards
-      spread
-      cards={cards}
-      onDrop={() => moveCards("grabbed", id)}
-      onGrab={(card: Card) => moveCards(id, "grabbed", card)}
-    />
+    <div className="relative">
+      <CardStack
+        spread
+        cards={unchained}
+        onDrop={() => moveCards("grabbed", id)}
+        onGrab={(origin: Card) => handleGrab(origin)}
+      />
+      {chained.length > 0 && (
+        <div className="absolute" style={{ top: unchained.length * 18 }}>
+          <CardStack
+            spread
+            cards={chained}
+            onDrop={() => moveCards("grabbed", id)}
+            onGrab={(origin: Card) => handleGrab(origin)}
+          />
+        </div>
+      )}
+    </div>
   );
 };

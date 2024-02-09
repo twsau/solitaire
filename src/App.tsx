@@ -8,6 +8,7 @@ import { Waste } from "./components/stacks/Waste";
 import { Foundation } from "./components/stacks/Foundation";
 import { Tableau } from "./components/stacks/Tableau";
 import preload from "./preload";
+import devLog from "./devLog";
 
 export const App = () => {
   const loading = useGame((state) => state.loading);
@@ -15,6 +16,8 @@ export const App = () => {
   useEffect(() => {
     preload().then(setGame);
   }, []);
+
+  devLog();
 
   return (
     <>
