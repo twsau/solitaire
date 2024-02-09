@@ -1,11 +1,19 @@
-export default async function preload() {
+export default function preload() {
   const preloadedLinks = document.querySelectorAll('link[rel="preload"]');
-  preloadedLinks.forEach((link) => {
-    const img = new Image();
-    img.src = link.getAttribute("href") as string;
 
-    img.onerror = () => {
-      console.log(`${link.getAttribute("href")} failed to load`);
-    };
-  });
+  const promises = Array.from(preloadedLinks).map(
+    (link) =>
+      new Promise<void>((resolve, reject) => {
+        const img = new Image();
+        const src = link.getAttribute("href") as string;
+        if (!src) console.error(`no src found: ${link}`);
+
+        img.src = src;
+        img.onload = () => resolve();
+        img.onerror = () =>
+          reject(`${link.getAttribute("href")} failed to load`);
+      })
+  );
+
+  return Promise.all(promises);
 }
