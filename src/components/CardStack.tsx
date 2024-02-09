@@ -1,6 +1,6 @@
 import findChained from "@/func/findChained";
 import { useGame } from "@/state/game";
-import { FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { FC, useMemo } from "react";
 import { Card } from "./Card";
 import { cn } from "@/lib/utils";
 
