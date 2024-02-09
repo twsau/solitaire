@@ -5,10 +5,12 @@ export default function tableauToGrabbed(ref: number, origin?: Card) {
     if (!origin) return state;
 
     const key = `tableau_${ref}` as keyof typeof state;
-    const tableau = state[key] as typeof state.tableau_1;
+    const tableau = state[key].slice() as typeof state.tableau_1;
+    const originIndex = tableau.indexOf(origin);
+    const lastCard = originIndex === tableau.length;
 
-    const lastCard = tableau.indexOf(origin) === tableau.length - 1;
     if (lastCard) {
+      console.log("last card");
       if (tableau[tableau.length - 1].facing === "down")
         return {
           [key]: tableau.map((card, index) =>
@@ -20,14 +22,12 @@ export default function tableauToGrabbed(ref: number, origin?: Card) {
         grabbedFrom: key,
         [key]: tableau.filter((_, index) => index !== tableau.length - 1),
       };
+    } else {
+      return {
+        grabbed: tableau.slice(originIndex, tableau.length),
+        grabbedFrom: key,
+        [key]: tableau.filter((_, index) => index < originIndex),
+      };
     }
-
-    const originIndex = tableau.indexOf(origin);
-    const stack = tableau.splice(originIndex, tableau.length - 1);
-    return {
-      grabbed: stack,
-      grabbedFrom: key,
-      [key]: tableau.filter((_, index) => index < originIndex),
-    };
   });
 }
