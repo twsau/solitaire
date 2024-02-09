@@ -19,14 +19,14 @@ import { setDeckStyle, useSettings } from "@/state/settings";
 import { Label } from "./ui/label";
 
 const DECK_STYLES = [
-  "Blue Stripe",
-  "Orange Square",
-  "Purple Hex",
-  "Honeycomb",
-  "Stone",
-  "Mustard",
-  "Sunny Hills",
-  "Emoji",
+  "Chambray",
+  "Lotus",
+  "Ming",
+  "Victoria",
+  "Roman Coffee",
+  "Tundora",
+  "Lotus Alt",
+  "Killarney",
 ];
 
 export const Settings: FC = () => {
@@ -42,7 +42,7 @@ export const Settings: FC = () => {
           <DrawerTitle>Settings</DrawerTitle>
         </DrawerHeader>
         <DrawerFooter>
-          <Label htmlFor="style">Deck Style</Label>
+          <Label htmlFor="style">Deck</Label>
           <Select
             onValueChange={(v) => setDeckStyle(DECK_STYLES.indexOf(v) + 1)}
             value={DECK_STYLES[deckStyle - 1]}
