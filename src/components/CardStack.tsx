@@ -1,16 +1,16 @@
 import findChained from "@/func/findChained";
 import { useGame } from "@/state/game";
 import { FC, useMemo } from "react";
-import { ClassNameValue } from "tailwind-merge";
 import { Card } from "./Card";
+import { cn } from "@/lib/utils";
 
-const CARD_STYLE: ClassNameValue = "absolute inset-0";
 const SPREAD_PIXELS = {
   DEFAULT: 3,
   SPREAD: 18,
 };
 
 interface Props {
+  animate?: boolean;
   cards: Card[];
   chainCards?: boolean;
   onDrop?: () => void;
@@ -20,6 +20,7 @@ interface Props {
 }
 
 export const CardStack: FC<Props> = ({
+  animate = true,
   cards,
   chainCards = false,
   onDrop = () => {},
@@ -28,6 +29,11 @@ export const CardStack: FC<Props> = ({
   spread = false,
 }) => {
   const id = useMemo(() => crypto.randomUUID() as string, []);
+  const cardStyle = cn(
+    "absolute inset-0",
+    animate ? "animate-spread-stack" : ""
+  );
+
   const { grabbed } = useGame();
   const [chained, unchained] = useMemo(
     () => (chainCards ? findChained(cards) : [[], cards]),
@@ -43,7 +49,7 @@ export const CardStack: FC<Props> = ({
       }}
     >
       {!unchained.length && !chained.length && (
-        <div className={CARD_STYLE} onClick={onEmpty}></div>
+        <div className={cardStyle} onClick={onEmpty}></div>
       )}
       {unchained.map((card, index) => {
         const canGrab =
@@ -53,7 +59,7 @@ export const CardStack: FC<Props> = ({
 
         return (
           <div
-            className={CARD_STYLE}
+            className={cardStyle}
             key={`stack-${id}-unchained-${index}`}
             onClick={() => {
               if (!canGrab) return;
@@ -73,7 +79,7 @@ export const CardStack: FC<Props> = ({
         const canGrab = !grabbed.length;
         return (
           <div
-            className={CARD_STYLE}
+            className={cardStyle}
             key={`stack-${id}-chained-${index}`}
             onClick={() => {
               if (canGrab) onGrab(card);

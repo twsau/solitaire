@@ -23,7 +23,7 @@ export default function tableauToGrabbed(ref: number, origin?: Card) {
       };
     } else {
       return {
-        grabbed: tableau.slice(originIndex, tableau.length),
+        grabbed: tableau.splice(originIndex, tableau.length - originIndex),
         grabbedFrom: key,
         [key]: tableau.filter((_, index) => index < originIndex),
       };
