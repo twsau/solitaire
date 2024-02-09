@@ -5,7 +5,7 @@ import { Grabbed } from "./components/stacks/Grabbed";
 import { Bordered } from "./components/Bordered";
 import { Hand } from "./components/stacks/Hand";
 import { Waste } from "./components/stacks/Waste";
-import { Foundations } from "./components/stacks/Foundation";
+import { Foundations } from "./components/stacks/Foundations";
 import { Tableaux } from "./components/stacks/Tableaux";
 
 export const App = () => {

@@ -18,22 +18,22 @@ export const Foundations = () => {
       <Bordered>
         <CardStack
           cards={foundation_2}
-          onDrop={() => moveCards("grabbed", "foundation_1")}
-          onGrab={() => moveCards("foundation_1", "grabbed")}
+          onDrop={() => moveCards("grabbed", "foundation_2")}
+          onGrab={() => moveCards("foundation_2", "grabbed")}
         />
       </Bordered>
       <Bordered>
         <CardStack
           cards={foundation_3}
-          onDrop={() => moveCards("grabbed", "foundation_1")}
-          onGrab={() => moveCards("foundation_1", "grabbed")}
+          onDrop={() => moveCards("grabbed", "foundation_3")}
+          onGrab={() => moveCards("foundation_3", "grabbed")}
         />
       </Bordered>
       <Bordered>
         <CardStack
           cards={foundation_4}
-          onDrop={() => moveCards("grabbed", "foundation_1")}
-          onGrab={() => moveCards("foundation_1", "grabbed")}
+          onDrop={() => moveCards("grabbed", "foundation_4")}
+          onGrab={() => moveCards("foundation_4", "grabbed")}
         />
       </Bordered>
     </>
