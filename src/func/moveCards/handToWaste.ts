@@ -4,7 +4,9 @@ export default function handToWaste() {
   useGame.setState((state) => {
     if (!state.hand.length) {
       return {
-        hand: state.waste.map((card) => ({ ...card, facing: "down" })),
+        hand: state.waste
+          .map((card) => ({ ...card, facing: "down" }))
+          .reverse() as Card[],
         waste: [],
       };
     }
