@@ -3,8 +3,7 @@ import { useSettings } from "@/state/settings";
 import { FC } from "react";
 import { ClassNameValue } from "tailwind-merge";
 
-const cardStyle: ClassNameValue =
-  "w-[68px] h-[100px] bg-cover transition-all group-hover:scale-105";
+const cardStyle: ClassNameValue = "w-[68px] h-[100px] bg-cover";
 
 const faces: Record<CardSuit, Record<number, ClassNameValue>> = {
   hearts: {
@@ -91,5 +90,13 @@ export const Card: FC<Props> = ({ card }) => {
       ? backs[deckStyle as keyof typeof backs]
       : faces[card.suit][card.value];
 
-  return <button className={cn(cardStyle, sprite)} />;
+  return (
+    <button
+      className={cn(
+        cardStyle,
+        sprite,
+        card.facing === "up" ? "hover:scale-105 transition-transform" : ""
+      )}
+    />
+  );
 };

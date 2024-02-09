@@ -128,10 +128,20 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        grabbed: {
+          from: {
+            opacity: 0,
+            transform: "translateY(-60%) rotate(0deg)",
+          },
+          to: {
+            transform: "translateY(-50%) rotate(12deg) scale(0.75)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        grabbed: "grabbed 0.2s ease-in-out forwards",
       },
     },
   },

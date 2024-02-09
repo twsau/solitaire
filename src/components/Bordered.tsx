@@ -10,8 +10,8 @@ export const Bordered = ({
 }) => (
   <div
     className={cn(
-      "grid place-items-center rounded w-[68px] h-[100px]",
-      hidden ? "border-none" : "border"
+      "grid place-items-center rounded min-w-[68px] h-[100px]",
+      hidden ? "" : "border"
     )}
   >
     {children}
