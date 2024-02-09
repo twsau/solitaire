@@ -23,7 +23,7 @@ export const Grabbed: FC = () => {
 
   return (
     <div
-      className="grid place-items-center rounded min-w-[68px] min-h-[100px] fixed animate-grabbed"
+      className="grid place-items-center rounded min-w-[68px] min-h-[100px] fixed animate-grabbed pointer-events-none"
       style={{ left: cursor.left, top: cursor.top }}
     >
       <CardStack cards={cards} spread />

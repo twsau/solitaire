@@ -28,7 +28,7 @@ export const App = () => {
         </div>
       )}
       {!loading && (
-        <main className="pt-14 max-w-lg mx-auto">
+        <main className="h-full inset-0 pt-14 max-w-lg mx-auto">
           <div className="flex justify-evenly mb-4">
             <Hand />
             <Waste />

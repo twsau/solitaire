@@ -12,11 +12,12 @@ export const Card: FC<Props> = ({ card }) => {
   return (
     <button
       className={cn(
-        "w-[68px] h-[100px] bg-cover",
+        "w-[68px] h-[100px] bg-cover select-none cursor-grab",
         card.facing === "up" ? "hover:scale-105 transition-transform" : ""
       )}
     >
       <img
+        draggable={false}
         src={
           card.facing === "up"
             ? `/cards/${card.suit}/${card.value}.png`
