@@ -5,7 +5,7 @@ export default function tableauToGrabbed(ref: number, origin?: Card) {
     if (!origin) return state;
 
     const key = `tableau_${ref}` as keyof typeof state;
-    const tableau = state[key].slice() as typeof state.tableau_1;
+    const tableau = state[key] as typeof state.tableau_1;
     const originIndex = tableau.indexOf(origin);
     const lastCard = originIndex === tableau.length;
 
