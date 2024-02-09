@@ -28,17 +28,18 @@ export const CardStack: FC<Props> = ({
   onGrab = () => {},
   spread = false,
 }) => {
+  const grabbed = useGame((state) => state.grabbed);
   const id = useMemo(() => crypto.randomUUID() as string, []);
-  const cardStyle = cn(
-    "absolute inset-0",
-    animate ? "animate-spread-stack" : ""
+  const cardStyle = useMemo(
+    () => cn("absolute inset-0", animate ? "animate-spread-stack" : ""),
+    [animate]
   );
-
-  const { grabbed } = useGame();
   const [chained, unchained] = useMemo(
     () => (chainCards ? findChained(cards) : [[], cards]),
     [cards, chainCards]
   );
+
+  console.log("stack render");
 
   return (
     <div
