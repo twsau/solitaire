@@ -10,7 +10,6 @@ export default function tableauToGrabbed(ref: number, origin?: Card) {
     const lastCard = originIndex === tableau.length;
 
     if (lastCard) {
-      console.log("last card");
       if (tableau[tableau.length - 1].facing === "down")
         return {
           [key]: tableau.map((card, index) =>
