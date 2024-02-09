@@ -5,8 +5,8 @@ import { Grabbed } from "./components/stacks/Grabbed";
 import { Bordered } from "./components/Bordered";
 import { Hand } from "./components/stacks/Hand";
 import { Waste } from "./components/stacks/Waste";
-import { Foundations } from "./components/stacks/Foundations";
-import { Tableaux } from "./components/stacks/Tableaux";
+import { Foundation } from "./components/stacks/Foundation";
+import { Tableau } from "./components/stacks/Tableau";
 
 export const App = () => {
   useEffect(() => {
@@ -24,9 +24,20 @@ export const App = () => {
           <Hand />
           <Waste />
           <Bordered hidden />
-          <Foundations />
+          <Foundation id="foundation_1" />
+          <Foundation id="foundation_2" />
+          <Foundation id="foundation_3" />
+          <Foundation id="foundation_4" />
         </div>
-        <Tableaux />
+        <div className="flex justify-evenly">
+          <Tableau id="tableau_1" />
+          <Tableau id="tableau_2" />
+          <Tableau id="tableau_3" />
+          <Tableau id="tableau_4" />
+          <Tableau id="tableau_5" />
+          <Tableau id="tableau_6" />
+          <Tableau id="tableau_7" />
+        </div>
         <Grabbed />
       </main>
     </>

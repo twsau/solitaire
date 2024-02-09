@@ -4,12 +4,12 @@ import moveCards from "@/func/moveCards";
 import { Bordered } from "../Bordered";
 
 export const Hand = () => {
-  const { hand } = useGame();
+  const cards = useGame((state) => state.hand);
 
   return (
     <Bordered>
       <CardStack
-        cards={hand}
+        cards={cards}
         onEmpty={() => moveCards("hand", "waste")}
         onGrab={() => moveCards("hand", "waste")}
       />

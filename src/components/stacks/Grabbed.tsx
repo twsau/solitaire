@@ -3,7 +3,7 @@ import { useGame } from "@/state/game";
 import { CardStack } from "../CardStack";
 
 export const Grabbed: FC = () => {
-  const { grabbed } = useGame();
+  const cards = useGame((state) => state.grabbed);
   const [cursor, setCursor] = useState({ left: 0, top: 0 });
 
   useEffect(() => {
@@ -19,14 +19,14 @@ export const Grabbed: FC = () => {
     };
   }, []);
 
-  if (!grabbed.length) return null;
+  if (!cards.length) return null;
 
   return (
     <div
       className="grid place-items-center rounded min-w-[68px] min-h-[100px] fixed animate-grabbed"
       style={{ left: cursor.left, top: cursor.top }}
     >
-      <CardStack cards={grabbed} spread />
+      <CardStack cards={cards} spread />
     </div>
   );
 };

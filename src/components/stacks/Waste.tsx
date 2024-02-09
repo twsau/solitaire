@@ -4,12 +4,12 @@ import { CardStack } from "../CardStack";
 import moveCards from "@/func/moveCards";
 
 export const Waste = () => {
-  const { waste } = useGame();
+  const cards = useGame((state) => state.waste);
 
   return (
     <Bordered>
       <CardStack
-        cards={waste}
+        cards={cards}
         onGrab={() => moveCards("waste", "grabbed")}
         onDrop={() => moveCards("grabbed", "waste")}
       />
