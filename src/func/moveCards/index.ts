@@ -1,0 +1,63 @@
+import grabbedToTableau from "./grabbedToTableau";
+import grabbedToWaste from "./grabbedToWaste";
+import handToWaste from "./handToWaste";
+import tableauToGrabbed from "./tableauToGrabbed";
+import wasteToGrabbed from "./wasteToGrabbed";
+
+type MoveFromTo = {
+  [From in Stack]: Partial<{
+    [To in Exclude<Stack, From>]: (origin?: Card) => void;
+  }>;
+};
+
+const move: MoveFromTo = {
+  grabbed: {
+    waste: grabbedToWaste,
+    tableau_1: () => grabbedToTableau(1),
+    tableau_2: () => grabbedToTableau(2),
+    tableau_3: () => grabbedToTableau(3),
+    tableau_4: () => grabbedToTableau(4),
+    tableau_5: () => grabbedToTableau(5),
+    tableau_6: () => grabbedToTableau(6),
+    tableau_7: () => grabbedToTableau(7),
+  },
+  hand: {
+    waste: handToWaste,
+  },
+  waste: {
+    grabbed: wasteToGrabbed,
+  },
+  tableau_1: {
+    grabbed: (origin) => tableauToGrabbed(1, origin),
+  },
+  tableau_2: {
+    grabbed: (origin) => tableauToGrabbed(2, origin),
+  },
+  tableau_3: {
+    grabbed: (origin) => tableauToGrabbed(3, origin),
+  },
+  tableau_4: {
+    grabbed: (origin) => tableauToGrabbed(4, origin),
+  },
+  tableau_5: {
+    grabbed: (origin) => tableauToGrabbed(5, origin),
+  },
+  tableau_6: {
+    grabbed: (origin) => tableauToGrabbed(6, origin),
+  },
+  tableau_7: {
+    grabbed: (origin) => tableauToGrabbed(7, origin),
+  },
+};
+
+export default function moveCards<T extends Stack>(
+  from: T,
+  to: ExcludeStack<Stack, T>,
+  origin?: Card
+) {
+  const func = move[from][to];
+
+  console.log(`move: ${from} -> ${to}`);
+  if (!func) console.error(`no move function found: ${from} -> ${to}`);
+  else func(origin);
+}
