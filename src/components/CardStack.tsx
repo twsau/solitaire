@@ -24,7 +24,7 @@ export const CardStack: FC<Props> = ({
   spread = false,
 }) => {
   const grabbed = useGame((state) => state.grabbed);
-  const cardStyle = useMemo(() => "absolute inset-0 animate-spread-stack", []);
+  const cardStyle = useMemo(() => "absolute inset-0 animate-card", []);
 
   return (
     <div

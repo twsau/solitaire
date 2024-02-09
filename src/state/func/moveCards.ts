@@ -1,11 +1,11 @@
 import { useGame } from "@/state/game";
-import foundationToGrabbed from "./foundationToGrabbed";
-import grabbedToFoundation from "./grabbedToFoundation";
-import grabbedToTableau from "./grabbedToTableau";
-import grabbedToWaste from "./grabbedToWaste";
-import handToWaste from "./handToWaste";
-import tableauToGrabbed from "./tableauToGrabbed";
-import wasteToGrabbed from "./wasteToGrabbed";
+import foundationToGrabbed from "./fromTo/foundationToGrabbed";
+import grabbedToFoundation from "./fromTo/grabbedToFoundation";
+import grabbedToTableau from "./fromTo/grabbedToTableau";
+import grabbedToWaste from "./fromTo/grabbedToWaste";
+import handToWaste from "./fromTo/handToWaste";
+import tableauToGrabbed from "./fromTo/tableauToGrabbed";
+import wasteToGrabbed from "./fromTo/wasteToGrabbed";
 
 type MoveFromTo = {
   [From in Stack]: Partial<{

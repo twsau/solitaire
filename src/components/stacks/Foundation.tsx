@@ -2,7 +2,7 @@ import { useGame } from "@/state/game";
 import { FC } from "react";
 import { Bordered } from "../Bordered";
 import { CardStack } from "../CardStack";
-import moveCards from "@/func/moveCards";
+import moveCards from "@/state/func/moveCards";
 
 interface Props {
   id: "foundation_1" | "foundation_2" | "foundation_3" | "foundation_4";

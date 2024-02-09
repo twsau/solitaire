@@ -1,6 +1,6 @@
 import { useGame } from "@/state/game";
 import { CardStack } from "../CardStack";
-import moveCards from "@/func/moveCards";
+import moveCards from "@/state/func/moveCards";
 import { Bordered } from "../Bordered";
 
 export const Hand = () => {

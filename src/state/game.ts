@@ -1,6 +1,4 @@
 import { create } from "zustand";
-import shuffleCards from "../func/shuffleCards";
-import getFullDeck from "../func/getFullDeck";
 
 interface Game {
   loading: boolean;
@@ -25,7 +23,7 @@ const initialState: Game = {
   loading: true,
   grabbed: [],
   grabbedFrom: "",
-  hand: shuffleCards(getFullDeck()),
+  hand: [],
   waste: [],
   tableau_1: [],
   tableau_2: [],
@@ -41,31 +39,3 @@ const initialState: Game = {
 };
 
 export const useGame = create<Game>()(() => initialState);
-
-export const setGame = () => {
-  const hand = [...useGame.getState().hand];
-
-  const stacks: Card[][] = [[], [], [], [], [], [], []];
-
-  for (let i = 0; i < 7; i++) {
-    const index = i % 7;
-    const destination = stacks[index];
-
-    while (destination.length < index + 1) destination.push(hand.pop() as Card);
-
-    const lastCard = destination[destination.length - 1];
-    lastCard.facing = "up";
-  }
-
-  useGame.setState({
-    loading: false,
-    hand,
-    tableau_1: stacks[0],
-    tableau_2: stacks[1],
-    tableau_3: stacks[2],
-    tableau_4: stacks[3],
-    tableau_5: stacks[4],
-    tableau_6: stacks[5],
-    tableau_7: stacks[6],
-  });
-};

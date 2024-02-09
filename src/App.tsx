@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { setGame, useGame } from "./state/game";
+import { useGame } from "./state/game";
 import { Settings } from "./components/Settings";
 import { Grabbed } from "./components/stacks/Grabbed";
 import { Bordered } from "./components/Bordered";
@@ -9,12 +9,13 @@ import { Foundation } from "./components/stacks/Foundation";
 import { Tableau } from "./components/stacks/Tableau";
 import preload from "./preload";
 import devLog from "./devLog";
+import newGame from "./state/func/newGame";
 
 export const App = () => {
   const loading = useGame((state) => state.loading);
 
   useEffect(() => {
-    preload().then(setGame);
+    preload().then(newGame);
   }, []);
 
   devLog();

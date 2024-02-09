@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import getFullDeck from "@/func/getFullDeck";
+import getFullDeck from "@/state/func/util/getFullDeck";
 import { Hand } from "@/components/stacks/Hand";
 
 const meta: Meta<typeof Hand> = {

@@ -1,7 +1,7 @@
 import { useGame } from "@/state/game";
 import { FC, useEffect } from "react";
 import { CardStack } from "../CardStack";
-import moveCards from "@/func/moveCards";
+import moveCards from "@/state/func/moveCards";
 
 interface Props {
   id:
