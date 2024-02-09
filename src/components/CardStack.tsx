@@ -1,6 +1,6 @@
 import findChained from "@/func/findChained";
 import { useGame } from "@/state/game";
-import { FC, useMemo } from "react";
+import { FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Card } from "./Card";
 import { cn } from "@/lib/utils";
 
@@ -20,9 +20,9 @@ interface Props {
 }
 
 export const CardStack: FC<Props> = ({
-  animate = true,
+  animate,
   cards,
-  chainCards = false,
+  chainCards,
   onDrop = () => {},
   onEmpty = () => {},
   onGrab = () => {},
@@ -34,12 +34,13 @@ export const CardStack: FC<Props> = ({
     () => cn("absolute inset-0", animate ? "animate-spread-stack" : ""),
     [animate]
   );
+
   const [chained, unchained] = useMemo(
     () => (chainCards ? findChained(cards) : [[], cards]),
     [cards, chainCards]
   );
 
-  console.log("stack render");
+  console.log(`render: ${id}`);
 
   return (
     <div
