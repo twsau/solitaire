@@ -6,8 +6,6 @@ import { Bordered } from "../Bordered";
 export const Hand = () => {
   const { hand } = useGame();
 
-  console.log("render hand");
-
   return (
     <Bordered>
       <CardStack

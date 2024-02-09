@@ -75,7 +75,6 @@ export default function moveCards<T extends Stack>(
 ) {
   const func = move[from][to];
 
-  console.log(`move: ${from} -> ${to}`);
   if (!func) console.error(`no move function found: ${from} -> ${to}`);
   else func(origin);
 }

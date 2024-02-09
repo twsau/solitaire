@@ -14,8 +14,6 @@ type TableauKey =
 const Tableau = ({ tableau }: { tableau: TableauKey }) => {
   const cards = useGame()[tableau];
 
-  console.log(`render ${tableau}`);
-
   return (
     <CardStack
       chainCards
@@ -28,8 +26,6 @@ const Tableau = ({ tableau }: { tableau: TableauKey }) => {
 };
 
 export const Tableaux = () => {
-  console.log("render tableaux");
-
   return (
     <div className="flex justify-evenly">
       <Tableau tableau="tableau_1" />

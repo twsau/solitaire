@@ -6,8 +6,6 @@ import moveCards from "@/func/moveCards";
 export const Foundations = () => {
   const { foundation_1, foundation_2, foundation_3, foundation_4 } = useGame();
 
-  console.log("render foundations");
-
   return (
     <>
       <Bordered>

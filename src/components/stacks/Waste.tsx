@@ -5,7 +5,6 @@ import moveCards from "@/func/moveCards";
 
 export const Waste = () => {
   const { waste } = useGame();
-  console.log("render waste");
 
   return (
     <Bordered>

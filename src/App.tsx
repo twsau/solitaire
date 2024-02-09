@@ -13,8 +13,6 @@ export const App = () => {
     setGame();
   }, []);
 
-  console.log("render app");
-
   return (
     <>
       <header className="container flex items-center h-14 border-b">
