@@ -5,7 +5,7 @@ import { Card } from "./Card";
 import { cn } from "@/lib/utils";
 
 const SPREAD_PIXELS = {
-  DEFAULT: 3,
+  DEFAULT: 1.5,
   SPREAD: 18,
 };
 
@@ -67,8 +67,8 @@ export const CardStack: FC<Props> = ({
             }}
             style={{
               transform: spread
-                ? `translateY(${index * 18}px)`
-                : `translateY(-${index / 3}px)`,
+                ? `translateY(${index * SPREAD_PIXELS.SPREAD}px)`
+                : `translateY(-${index * SPREAD_PIXELS.DEFAULT}px)`,
             }}
           >
             <Card card={card} />
