@@ -1,6 +1,6 @@
-import { FC, useEffect, useState } from "react";
+import { FC, Profiler, useEffect, useState } from "react";
 import { useGame } from "@/state";
-import { CardStack } from "./CardStack";
+import { CardStack } from "../CardStack";
 
 export const Grabbed: FC = () => {
   const { grabbed } = useGame();
@@ -22,11 +22,13 @@ export const Grabbed: FC = () => {
   if (!grabbed.length) return null;
 
   return (
-    <div
-      className="grid place-items-center rounded min-w-[68px] transition-transform min-h-[100px] fixed -translate-y-1/2 rotate-12 scale-75"
-      style={{ left: cursor.left, top: cursor.top }}
-    >
-      <CardStack cards={grabbed} spread />
-    </div>
+    <Profiler id="grabbed" onRender={console.log}>
+      <div
+        className="grid place-items-center rounded min-w-[68px] transition-transform min-h-[100px] fixed -translate-y-1/2 rotate-12 scale-75"
+        style={{ left: cursor.left, top: cursor.top }}
+      >
+        <CardStack cards={grabbed} spread />
+      </div>
+    </Profiler>
   );
 };
