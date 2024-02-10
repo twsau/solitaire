@@ -1,4 +1,4 @@
-type StackKey = FoundationKey | TableauKey;
+type StackKey = FoundationKey | TableauKey | "hand" | "waste" | "grabbed";
 
 type FoundationKey =
   | "foundation_1"
