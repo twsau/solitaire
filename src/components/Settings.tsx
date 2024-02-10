@@ -29,35 +29,40 @@ const DECK_STYLES = [
   "Killarney",
 ];
 
+const ROW = "flex items-center justify-between";
+const ICON_SIZE = 24;
+
 export const Settings: FC = () => {
   const { deckStyle } = useSettings();
 
   return (
-    <Drawer>
-      <DrawerTrigger>
-        <GearIcon />
+    <Drawer shouldScaleBackground>
+      <DrawerTrigger className="text-foreground/50 hover:text-foreground transition-colors text-3xl">
+        <GearIcon height={ICON_SIZE} width={ICON_SIZE} />
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Settings</DrawerTitle>
+          <DrawerTitle className="text-center">Settings</DrawerTitle>
         </DrawerHeader>
         <DrawerFooter>
-          <Label htmlFor="style">Deck</Label>
-          <Select
-            onValueChange={(v) => setDeckStyle(DECK_STYLES.indexOf(v) + 1)}
-            value={DECK_STYLES[deckStyle - 1]}
-          >
-            <SelectTrigger id="style">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {DECK_STYLES.map((s) => (
-                <SelectItem key={`style-${s}`} value={s}>
-                  {s}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <div className={ROW}>
+            <Label htmlFor="style">Deck</Label>
+            <Select
+              onValueChange={(v) => setDeckStyle(DECK_STYLES.indexOf(v) + 1)}
+              value={DECK_STYLES[deckStyle - 1]}
+            >
+              <SelectTrigger className="max-w-48" id="style">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {DECK_STYLES.map((style) => (
+                  <SelectItem key={`style-${style}`} value={style}>
+                    {style}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

@@ -22,7 +22,14 @@ export const App = () => {
 
   return (
     <>
-      <header className="container flex items-center h-14 border-b">
+      <header className="container flex items-center h-14 border-b gap-3">
+        <h1>Solitaire v1</h1>
+        <a
+          className="text-primary hover:text-foreground transition-colors"
+          href="https://bossweb.dev/projects/solitaire"
+        >
+          About
+        </a>
         <div className="ml-auto" />
         <Settings />
       </header>
@@ -32,7 +39,7 @@ export const App = () => {
         </div>
       )}
       {!loading && (
-        <main className="h-full inset-0 pt-14 max-w-lg mx-auto">
+        <main className="pt-14 max-w-lg mx-auto">
           <div className="flex justify-evenly mb-4 gap-3">
             <Hand />
             <Waste />

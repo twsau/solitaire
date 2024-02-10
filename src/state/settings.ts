@@ -6,7 +6,7 @@ interface Settings {
 }
 
 const initialState: Settings = {
-  deckStyle: 7,
+  deckStyle: 4,
 };
 
 export const useSettings = create<Settings>()(
