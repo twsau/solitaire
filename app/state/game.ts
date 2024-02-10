@@ -1,5 +1,7 @@
 import { create } from "zustand";
 
+// the absolute state of this thing
+
 const initialState: Game = {
   loading: true,
   grabbed: [],
