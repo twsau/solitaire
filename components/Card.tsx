@@ -29,6 +29,7 @@ export const Card: FC<Props> = ({ card }) => {
         alt={`${card.value} of ${card.suit}`}
         draggable={false}
         height={100}
+        loading="eager"
         priority
         src={src}
         width={68}
