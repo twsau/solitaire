@@ -33,7 +33,7 @@ export const App = () => {
       )}
       {!loading && (
         <main className="h-full inset-0 pt-14 max-w-lg mx-auto">
-          <div className="flex justify-evenly mb-4">
+          <div className="flex justify-evenly mb-4 gap-3">
             <Hand />
             <Waste />
             <Bordered hidden />
@@ -42,7 +42,7 @@ export const App = () => {
             <Foundation id="foundation_3" />
             <Foundation id="foundation_4" />
           </div>
-          <div className="flex justify-evenly">
+          <div className="flex justify-evenly gap-3">
             <Tableau id="tableau_1" />
             <Tableau id="tableau_2" />
             <Tableau id="tableau_3" />
