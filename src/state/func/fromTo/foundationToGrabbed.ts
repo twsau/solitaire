@@ -3,7 +3,7 @@ import { useGame } from "@/state/game";
 export default function foundationToGrabbed(ref: number) {
   const state = useGame.getState();
 
-  const key = `foundation_${ref}` as keyof typeof state;
+  const key = `foundation_${ref}` as Exclude<Game["grabbedFrom"], "">;
   const foundation = state[key] as typeof state.foundation_1;
   const card = foundation[foundation.length - 1];
 
