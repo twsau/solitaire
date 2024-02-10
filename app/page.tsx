@@ -9,7 +9,7 @@ export default function HomePage() {
           <Link href="/play">Play</Link>
         </Button>
         <Button asChild>
-          <Link href="/leaderboard">Leaderboard</Link>
+          <a href="https://bossweb.dev/project/solitaire">About</a>
         </Button>
       </div>
     </main>
