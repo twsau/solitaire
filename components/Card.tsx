@@ -1,4 +1,5 @@
 import { useSettings } from "@/app/state/settings";
+import { cardImages } from "@/img";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC, useMemo } from "react";
@@ -9,6 +10,9 @@ interface Props {
 
 export const Card: FC<Props> = ({ card }) => {
   const deckStyle = useSettings((state) => state.deckStyle);
+
+  const back = useMemo(() => cardImages[`back_${deckStyle}`], [deckStyle]);
+  const face = cardImages[`${card.suit}_${card.value}`];
 
   const src = useMemo(
     () =>
@@ -31,7 +35,7 @@ export const Card: FC<Props> = ({ card }) => {
         height={100}
         loading="eager"
         priority
-        src={src}
+        src={card.facing === "up" ? face : back}
         width={68}
       />
     </button>
