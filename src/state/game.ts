@@ -3,7 +3,7 @@ import { create } from "zustand";
 interface Game {
   loading: boolean;
   grabbed: CardStack;
-  grabbedFrom: string;
+  grabbedFrom: keyof Omit<Game, "loading" | "grabbedFrom"> | "";
   hand: CardStack;
   waste: CardStack;
   tableau_1: CardStack;
