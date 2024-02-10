@@ -42,7 +42,7 @@ export const App = () => {
             <Foundation id="foundation_3" />
             <Foundation id="foundation_4" />
           </div>
-          <div className="flex justify-evenly gap-3">
+          <div className="flex justify-evenly gap-[1.2rem]">
             <Tableau id="tableau_1" />
             <Tableau id="tableau_2" />
             <Tableau id="tableau_3" />
