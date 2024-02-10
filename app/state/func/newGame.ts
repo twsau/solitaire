@@ -2,7 +2,7 @@ import { useGame } from "../game";
 import fullDeck from "../util/fullDeck";
 import shuffleCards from "../util/shuffleCards";
 
-export default function newGame() {
+export default function newGame(): Game {
   const hand = shuffleCards(fullDeck());
   const tableaux: Card[][] = [[], [], [], [], [], [], []];
 
@@ -16,9 +16,10 @@ export default function newGame() {
     lastCard.facing = "up";
   }
 
-  useGame.setState({
+  return {
     loading: false,
     hand,
+    waste: [],
     foundation_1: [],
     foundation_2: [],
     foundation_3: [],
@@ -32,5 +33,5 @@ export default function newGame() {
     tableau_5: tableaux[4],
     tableau_6: tableaux[5],
     tableau_7: tableaux[6],
-  });
+  };
 }
