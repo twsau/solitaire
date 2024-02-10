@@ -2,6 +2,8 @@ import { useGame } from "@/state/game";
 import { FC, useMemo } from "react";
 import { Card } from "./Card";
 import { cn } from "@/lib/utils";
+import useDoubleClick from "@/hooks/useDoubleClick";
+import quickMove from "@/state/func/util/quickMove";
 
 const SPREAD_PIXELS = {
   DEFAULT: 1.5,
@@ -31,12 +33,14 @@ export const CardStack: FC<Props> = ({
     [animate]
   );
 
+  const doubleClick = useDoubleClick();
+
   return (
     <div
       className="relative w-[68px] h-[168px]"
       onClick={() => {
         if (!grabbed.length) return;
-        onDrop();
+        doubleClick ? quickMove(onDrop) : onDrop();
       }}
     >
       {!cards.length && <div className={cardStyle} onClick={onEmpty}></div>}
