@@ -23,7 +23,7 @@ export default function RootLayout({
           <h1>Solitaire v1</h1>
           <a
             className="text-primary hover:text-foreground transition-colors"
-            href="https://bossweb.dev/projects/solitaire"
+            href="https://bossweb.dev/projects/solitaire#content"
           >
             About
           </a>
