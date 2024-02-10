@@ -1,6 +1,7 @@
 import { useGame } from "@/state/game";
 import { FC, useMemo } from "react";
 import { Card } from "./Card";
+import { cn } from "@/lib/utils";
 
 const SPREAD_PIXELS = {
   DEFAULT: 1.5,
@@ -17,6 +18,7 @@ interface Props {
 }
 
 export const CardStack: FC<Props> = ({
+  animate = true,
   cards,
   onDrop = () => {},
   onEmpty = () => {},
@@ -24,7 +26,10 @@ export const CardStack: FC<Props> = ({
   spread = false,
 }) => {
   const grabbed = useGame((state) => state.grabbed);
-  const cardStyle = useMemo(() => "absolute inset-0 animate-card", []);
+  const cardStyle = useMemo(
+    () => cn("absolute inset-0", animate ? " animate-card" : ""),
+    [animate]
+  );
 
   return (
     <div

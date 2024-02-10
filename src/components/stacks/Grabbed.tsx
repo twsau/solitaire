@@ -5,6 +5,8 @@ import { CardStack } from "../CardStack";
 export const Grabbed: FC = () => {
   const cards = useGame((state) => state.grabbed);
   const [cursor, setCursor] = useState({ left: 0, top: 0 });
+
+  // stops redundant renders on card stack as cursor position updates
   const stack = useMemo(
     () => <CardStack animate={false} cards={cards} spread />,
     [cards]

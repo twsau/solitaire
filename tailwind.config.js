@@ -73,15 +73,15 @@ module.exports = {
         },
         card: {
           from: {
-            transform: "scale(1.25) translateY(-50%)",
+            transform: "scale(1.25) translateY(-25%)",
           },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        grabbed: "grabbed 0.2s ease-in-out forwards",
-        card: "card 0.2s ease-in-out",
+        grabbed: "grabbed 0.2s cubic-bezier(0.61, -0.8, 0.64, 1.57) forwards",
+        card: "card 0.2s cubic-bezier(0, -0.01, 0.4, -0.5)",
       },
     },
   },
