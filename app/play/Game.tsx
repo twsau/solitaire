@@ -9,12 +9,13 @@ import { Tableau } from "@/components/Stacks/Tableau";
 import { Grabbed } from "@/components/Stacks/Grabbed";
 import { useEffect } from "react";
 import newGame from "../state/func/newGame";
+import { preload } from "../state/util/preload";
 
 export const Game = () => {
   const loading = useGame((state) => state.loading);
 
   useEffect(() => {
-    useGame.setState(newGame());
+    preload().then(() => useGame.setState(newGame()));
   }, []);
 
   return (
