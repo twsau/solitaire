@@ -201,15 +201,17 @@ describe("Grabbed to waste", () => {
 });
 
 describe("Waste to grabbed", () => {
-  useGame.setState((state) => ({
-    hand: [],
-    waste: state.hand.map((c) => ({ ...c, facing: "up" })),
-  }));
+  test("it works", () => {
+    useGame.setState((state) => ({
+      hand: [],
+      waste: state.hand.map((c) => ({ ...c, facing: "up" })),
+    }));
 
-  moveCards("waste", "grabbed");
+    moveCards("waste", "grabbed");
 
-  const newState = useGame.getState();
+    const newState = useGame.getState();
 
-  expect(newState.grabbed.length).toBe(1);
-  expect(newState.waste.length).toBe(23);
+    expect(newState.grabbed.length).toBe(1);
+    expect(newState.waste.length).toBe(23);
+  });
 });
