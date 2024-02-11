@@ -1,12 +1,12 @@
 "use client";
 
-import { Hand } from "@/components/something/Hand";
+import { Hand } from "@/components/stacks/Hand";
 import { useGame } from "../../state/game";
-import { Waste } from "@/components/something/Waste";
+import { Waste } from "@/components/stacks/Waste";
 import { Bordered } from "@/components/Bordered";
-import { Foundation } from "@/components/something/Foundation";
-import { Tableau } from "@/components/something/Tableau";
-import { Grabbed } from "@/components/something/Grabbed";
+import { Foundation } from "@/components/stacks/Foundation";
+import { Tableau } from "@/components/stacks/Tableau";
+import { Grabbed } from "@/components/stacks/Grabbed";
 import { useEffect } from "react";
 import newGame from "../../state/func/newGame";
 import { preload } from "../../state/util/preload";
