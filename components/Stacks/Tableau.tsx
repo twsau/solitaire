@@ -1,7 +1,7 @@
 import { FC, useCallback, useEffect } from "react";
 import { CardStack } from "../CardStack";
-import { useGame } from "@/app/state/game";
-import moveCards from "@/app/state/func/moveCards";
+import { useGame } from "@/state/game";
+import moveCards from "@/state/func/moveCards";
 
 interface Props {
   id: TableauKey;

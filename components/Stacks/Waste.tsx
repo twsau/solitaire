@@ -1,7 +1,7 @@
-import { useGame } from "@/app/state/game";
+import { useGame } from "@/state/game";
 import { Bordered } from "../Bordered";
 import { CardStack } from "../CardStack";
-import moveCards from "@/app/state/func/moveCards";
+import moveCards from "@/state/func/moveCards";
 
 export const Waste = () => {
   const cards = useGame((state) => state.waste);

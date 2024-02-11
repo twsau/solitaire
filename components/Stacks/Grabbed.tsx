@@ -1,6 +1,6 @@
 import { FC, memo, useEffect, useState } from "react";
 import { CardStack } from "../CardStack";
-import { useGame } from "@/app/state/game";
+import { useGame } from "@/state/game";
 
 const useCursor = () => {
   const [cursor, setCursor] = useState({

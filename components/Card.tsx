@@ -1,4 +1,4 @@
-import { useSettings } from "@/app/state/settings";
+import { useSettings } from "@/state/settings";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC, memo, useEffect, useMemo } from "react";

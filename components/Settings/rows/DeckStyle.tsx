@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { setDeckStyle, useSettings } from "@/app/state/settings";
+import { setDeckStyle, useSettings } from "@/state/settings";
 
 const DECK_STYLES = [
   "Chambray",

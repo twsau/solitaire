@@ -1,7 +1,7 @@
 "use client";
 
-import quickMove from "@/app/state/func/quickMove";
-import { useGame } from "@/app/state/game";
+import quickMove from "@/state/func/quickMove";
+import { useGame } from "@/state/game";
 import useDoubleClick from "@/hooks/useDoubleClick";
 import { cn } from "@/lib/utils";
 import { FC, useMemo } from "react";
