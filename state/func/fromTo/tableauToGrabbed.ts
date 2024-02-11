@@ -1,7 +1,7 @@
 import { useGame } from "../../game";
 
 export default function tableauToGrabbed(ref: number, origin?: Card) {
-  if (!origin) return console.error("No origin found?!");
+  if (!origin) throw new Error("Origin undefined!");
 
   const state = useGame.getState();
 
