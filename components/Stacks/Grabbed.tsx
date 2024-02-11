@@ -1,38 +1,39 @@
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, memo, useEffect, useState } from "react";
 import { CardStack } from "../CardStack";
 import { useGame } from "@/app/state/game";
 
-export const Grabbed: FC = () => {
-  const cards = useGame((state) => state.grabbed);
-  const [cursor, setCursor] = useState({ left: 0, top: 0 });
-
-  // stops redundant renders on card stack as cursor position updates
-  const stack = useMemo(
-    () => <CardStack animate={false} cards={cards} spread />,
-    [cards]
-  );
+const useCursor = () => {
+  const [cursor, setCursor] = useState({
+    x: 0,
+    y: 0,
+  });
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      setCursor({ left: clientX, top: clientY });
-    };
+    const handleMouseMove = (e: MouseEvent) =>
+      setCursor({ x: e.clientX, y: e.clientY });
 
     document.addEventListener("mousemove", handleMouseMove);
 
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
+    return () => document.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
+  return cursor;
+};
+
+export const Grabbed: FC = memo(() => {
+  const cards = useGame((state) => state.grabbed);
+  const cursor = useCursor();
 
   if (!cards.length) return null;
 
   return (
     <div
       className="grid place-items-center rounded min-w-[68px] min-h-[100px] fixed animate-grabbed pointer-events-none"
-      style={{ left: cursor.left, top: cursor.top }}
+      style={{ left: cursor.x, top: cursor.y }}
     >
-      {stack}
+      <CardStack animate={false} cards={cards} spread />
     </div>
   );
-};
+});
+
+Grabbed.displayName = "Grabbed";

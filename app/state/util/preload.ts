@@ -62,14 +62,16 @@ const images = [
 ];
 
 export async function preload() {
-  const imagePromises = images.map((image) => {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      img.onload = () => resolve(img);
-      img.onerror = reject;
-      img.src = image;
-    });
-  });
+  const imagePromises = images.map(
+    (link) =>
+      new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onerror = () => console.error(`image preload error: ${link}`);
+        img.onload = () => resolve(img);
+        img.onerror = () => reject;
+        img.src = link;
+      })
+  );
 
   return Promise.all(imagePromises);
 }

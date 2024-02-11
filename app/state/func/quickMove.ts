@@ -29,6 +29,7 @@ export default function quickMove(fallback: () => void) {
     const aceToEmpty = foundation.length === 0 && topCard.value === 1;
 
     if (aceToEmpty) return moveCards("grabbed", key);
+    if (!foundation.length) continue;
 
     const bottomCard = foundation[foundation.length - 1];
 

@@ -8,8 +8,8 @@ import { FC, useMemo } from "react";
 import { Card } from "./Card";
 
 const SPREAD_PIXELS = {
-  DEFAULT: 1.5,
-  SPREAD: 18,
+  noSpread: -1.5,
+  spread: 18,
 };
 
 interface Props {
@@ -29,13 +29,12 @@ export const CardStack: FC<Props> = ({
   onGrab = () => {},
   spread = false,
 }) => {
+  const doubleClick = useDoubleClick();
   const grabbed = useGame((state) => state.grabbed);
   const cardStyle = useMemo(
     () => cn("absolute inset-0", animate ? " animate-card" : ""),
     [animate]
   );
-
-  const doubleClick = useDoubleClick();
 
   return (
     <div
@@ -45,7 +44,7 @@ export const CardStack: FC<Props> = ({
         doubleClick ? quickMove(onDrop) : onDrop();
       }}
     >
-      {!cards.length && <div className={cardStyle} onClick={onEmpty}></div>}
+      {!cards.length && <div className={cardStyle} onClick={onEmpty} />}
       {cards.map((card, index) => (
         <div
           className={cardStyle}
@@ -54,9 +53,9 @@ export const CardStack: FC<Props> = ({
             if (!grabbed.length) onGrab(card);
           }}
           style={{
-            transform: spread
-              ? `translateY(${index * SPREAD_PIXELS.SPREAD}px)`
-              : `translateY(-${index * SPREAD_PIXELS.DEFAULT}px)`,
+            transform: `translateY(${
+              index * SPREAD_PIXELS[spread ? "spread" : "noSpread"]
+            }px)`,
           }}
         >
           <Card card={card} />

@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useCallback, useEffect } from "react";
 import { CardStack } from "../CardStack";
 import { useGame } from "@/app/state/game";
 import moveCards from "@/app/state/func/moveCards";
@@ -21,13 +21,23 @@ export const Tableau: FC<Props> = ({ id }) => {
       });
   }, [cards, grabbed.length, id]);
 
+  const handleGrab = (origin: Card) => {
+    if (grabbed.length > 0) return;
+    moveCards(id, "grabbed", origin);
+  };
+
+  const handleDrop = () => {
+    if (grabbed.length < 1) return;
+    moveCards("grabbed", id);
+  };
+
   return (
     <div className="relative">
       <CardStack
         spread
         cards={cards}
-        onDrop={() => moveCards("grabbed", id)}
-        onGrab={(origin: Card) => moveCards(id, "grabbed", origin)}
+        onDrop={() => handleDrop()}
+        onGrab={(card: Card) => handleGrab(card)}
       />
     </div>
   );
