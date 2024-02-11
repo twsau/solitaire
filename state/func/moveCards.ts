@@ -76,7 +76,7 @@ export default function moveCards<T extends StackKey>(
 ) {
   if (origin?.facing === "down") return;
   const grabbed = useGame.getState().grabbed;
-  if (to === "grabbed" && grabbed.length) return;
+  if (to === "grabbed" && grabbed.length > 0) return;
   const func = move[from][to];
 
   if (!func) console.error(`no move function found: ${from} -> ${to}`);
