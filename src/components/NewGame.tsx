@@ -16,7 +16,7 @@ import { FormattedMessage } from "react-intl";
 export const NewGame = () => (
   <AlertDialog>
     <AlertDialogTrigger className="text-primary transition-colors hover:text-foreground">
-      <FormattedMessage defaultMessage="New Game" />
+      <FormattedMessage defaultMessage="New game" />
     </AlertDialogTrigger>
     <AlertDialogContent>
       <AlertDialogHeader>

@@ -6,14 +6,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { ICON_SIZE } from "@/constants";
-import { QuestionMarkCircledIcon } from "@radix-ui/react-icons";
 import { FormattedMessage } from "react-intl";
 
 export const HowToPlay = () => (
   <Dialog>
-    <DialogTrigger className="text-3xl text-foreground/50 transition-colors hover:text-foreground">
-      <QuestionMarkCircledIcon height={ICON_SIZE} width={ICON_SIZE} />
+    <DialogTrigger className="text-primary transition-colors hover:text-foreground">
+      <FormattedMessage defaultMessage="How to play" />
     </DialogTrigger>
     <DialogContent>
       <DialogHeader>

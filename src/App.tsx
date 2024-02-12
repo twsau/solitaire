@@ -13,6 +13,7 @@ import { Grabbed } from "./components/stacks/Grabbed";
 import { TranslationProvider } from "./providers/TranslationProvider";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import { Header } from "./components/Header";
+import { Toaster } from "./components/ui/sonner";
 
 export const App = () => {
   const loading = useGame((state) => state.loading);
@@ -46,6 +47,7 @@ export const App = () => {
             <Tableau id="tableau_7" />
           </div>
           <Grabbed />
+          <Toaster duration={5000} />
         </div>
       </ThemeProvider>
     </TranslationProvider>
