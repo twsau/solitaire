@@ -17,7 +17,11 @@ export const Card: FC<Props> = memo(({ card }) => {
       )}
     >
       <img
-        alt={`${card.value} of ${card.suit}`}
+        alt={
+          card.facing === "up"
+            ? `${card.value} of ${card.suit}`
+            : "playing card"
+        }
         draggable={false}
         height={100}
         src={
