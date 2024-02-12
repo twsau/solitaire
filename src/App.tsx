@@ -4,17 +4,15 @@ import { preload } from "./state/util/preload";
 import newGame from "./state/func/newGame";
 import "./globals.css";
 import { Loading } from "./components/Loading";
-import { Settings } from "./components/Settings";
 import { Hand } from "./components/stacks/Hand";
 import { Waste } from "./components/stacks/Waste";
 import { Bordered } from "./components/Bordered";
 import { Foundation } from "./components/stacks/Foundation";
 import { Tableau } from "./components/stacks/Tableau";
 import { Grabbed } from "./components/stacks/Grabbed";
-import { FormattedMessage } from "react-intl";
 import { TranslationProvider } from "./providers/TranslationProvider";
 import { ThemeProvider } from "./providers/ThemeProvider";
-import { HowToPlay } from "./components/HowToPlay";
+import { Header } from "./components/Header";
 
 export const App = () => {
   const loading = useGame((state) => state.loading);
@@ -27,20 +25,7 @@ export const App = () => {
   return (
     <TranslationProvider>
       <ThemeProvider>
-        <header className="container flex h-14 items-center gap-3 border-b">
-          <h1>
-            <FormattedMessage defaultMessage="Solitaire" />
-          </h1>
-          <a
-            className="text-primary transition-colors hover:text-foreground"
-            href="https://bossweb.dev/projects/solitaire#content"
-          >
-            <FormattedMessage defaultMessage="About" />
-          </a>
-          <div className="ml-auto" />
-          <HowToPlay />
-          <Settings />
-        </header>
+        <Header />
         <div className="mx-auto max-w-lg pt-14">
           <div className="mb-4 flex justify-evenly gap-3">
             <Hand />

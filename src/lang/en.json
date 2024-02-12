@@ -1,4 +1,6 @@
 {
+  "2LcgAy": "This action cannot be undone. Your current game will be lost!",
+  "47FYwb": "Cancel",
   "4GlECi": "Build each foundation in ascending order, following suit.",
   "4YagBP": "Move Aces to the foundation when available.",
   "At1Tf2": "Build four foundation piles, one for each suit, from Ace to King.",
@@ -11,7 +13,10 @@
   "UlCkBr": "Move cards between tableaux (bottom piles) and organize in descending order, alternating colors.",
   "XTu2xp": "Use drawn cards to build on the piles or move to the foundation.",
   "ZFG/86": "Place Kings or any sequences starting with a King in an empty tableau.",
+  "acrOoz": "Continue",
+  "ciCDee": "New Game",
   "g5pX+a": "About",
   "o/gK53": "Deck",
+  "v5ykbS": "Are you absolutely sure?",
   "y1Z3or": "Language"
 }
