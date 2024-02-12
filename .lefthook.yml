@@ -1,6 +1,8 @@
 pre-commit:
   parallel: true
   commands:
+    extract:
+      run: bun extract && git add src/lang
     lint:
       run: bun lint
     test:
