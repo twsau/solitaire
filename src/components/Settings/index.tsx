@@ -9,6 +9,7 @@ import {
 import { FC } from "react";
 import { GearIcon } from "@radix-ui/react-icons";
 import { DeckStyle } from "./rows/DeckStyle";
+import { FormattedMessage } from "react-intl";
 
 const ROW = "flex items-center justify-between";
 const ICON_SIZE = 24;
@@ -21,7 +22,9 @@ export const Settings: FC = () => {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle className="text-center">Settings</DrawerTitle>
+          <DrawerTitle className="text-center">
+            <FormattedMessage defaultMessage="Settings" />
+          </DrawerTitle>
         </DrawerHeader>
         <DrawerFooter>
           <div className={ROW}>

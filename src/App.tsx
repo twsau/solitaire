@@ -11,6 +11,7 @@ import { Bordered } from "./components/Bordered";
 import { Foundation } from "./components/stacks/Foundation";
 import { Tableau } from "./components/stacks/Tableau";
 import { Grabbed } from "./components/stacks/Grabbed";
+import { FormattedMessage } from "react-intl";
 
 export const App = () => {
   const loading = useGame((state) => state.loading);
@@ -23,12 +24,14 @@ export const App = () => {
   return (
     <>
       <header className="container flex h-14 items-center gap-3 border-b">
-        <h1>Solitaire v1</h1>
+        <h1>
+          <FormattedMessage defaultMessage="Solitaire" />
+        </h1>
         <a
           className="text-primary transition-colors hover:text-foreground"
           href="https://bossweb.dev/projects/solitaire#content"
         >
-          About
+          <FormattedMessage defaultMessage="About" />
         </a>
         <div className="ml-auto" />
         <Settings />
