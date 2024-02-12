@@ -1,4 +1,3 @@
-import { useGame } from "../game";
 import fullDeck from "../util/fullDeck";
 import shuffleCards from "../util/shuffleCards";
 
