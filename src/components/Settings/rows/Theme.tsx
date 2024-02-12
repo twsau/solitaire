@@ -17,7 +17,7 @@ export const Theme = () => {
   return (
     <>
       <Label htmlFor="language-select">
-        <FormattedMessage defaultMessage="Language" />
+        <FormattedMessage defaultMessage="Theme" />
       </Label>
       <Select onValueChange={(v: Theme) => setTheme(v)} value={theme}>
         <SelectTrigger className="max-w-48" id="language-select">
