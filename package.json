@@ -38,6 +38,7 @@
     "babel-plugin-formatjs": "^10.5.13",
     "bun-types": "^1.0.26",
     "eslint": "^8.56.0",
+    "eslint-plugin-formatjs": "^4.12.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-tailwindcss": "^3.14.2",

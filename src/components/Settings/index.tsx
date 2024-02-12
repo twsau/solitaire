@@ -10,6 +10,7 @@ import { FC } from "react";
 import { GearIcon } from "@radix-ui/react-icons";
 import { DeckStyle } from "./rows/DeckStyle";
 import { FormattedMessage } from "react-intl";
+import { Language } from "./rows/Language";
 
 const ROW = "flex items-center justify-between";
 const ICON_SIZE = 24;
@@ -29,6 +30,9 @@ export const Settings: FC = () => {
         <DrawerFooter>
           <div className={ROW}>
             <DeckStyle />
+          </div>
+          <div className={ROW}>
+            <Language />
           </div>
         </DrawerFooter>
       </DrawerContent>
