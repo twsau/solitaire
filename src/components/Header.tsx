@@ -9,13 +9,15 @@ export const Header = () => {
       <h1>
         <FormattedMessage defaultMessage="Solitaire" />
       </h1>
+      <NewGame />
       <a
         className="text-primary transition-colors hover:text-foreground"
         href="https://bossweb.dev/projects/solitaire#content"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <FormattedMessage defaultMessage="About" />
       </a>
-      <NewGame />
       <div className="ml-auto" />
       <HowToPlay />
       <Settings />
