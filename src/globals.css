@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  .Classic {
     --background: 125 50% 8%;
     --foreground: 125 5% 90%;
     --card: 125 50% 8%;
@@ -23,6 +23,98 @@
     --border: 125 30% 18%;
     --input: 125 30% 18%;
     --ring: 125 39% 23%;
+    --radius: 0.5rem;
+  }
+
+  .Royal {
+    --background: 270 50% 8%;
+    --foreground: 270 5% 90%;
+    --card: 270 50% 8%;
+    --card-foreground: 270 5% 90%;
+    --popover: 270 50% 5%;
+    --popover-foreground: 270 5% 90%;
+    --primary: 270 39% 23%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 30% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 270 30% 15%;
+    --muted-foreground: 270 5% 60%;
+    --accent: 270 30% 15%;
+    --accent-foreground: 270 5% 90%;
+    --destructive: 300 98% 30%;
+    --destructive-foreground: 270 5% 90%;
+    --border: 270 30% 18%;
+    --input: 270 30% 18%;
+    --ring: 270 39% 23%;
+    --radius: 0.5rem;
+  }
+
+  .Slate {
+    --background: 220 25% 12%;
+    --foreground: 220 15% 80%;
+    --card: 220 25% 12%;
+    --card-foreground: 220 15% 80%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 220 15% 80%;
+    --primary: 220 40% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 30% 25%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 220 30% 25%;
+    --accent-foreground: 220 15% 80%;
+    --destructive: 240 50% 40%;
+    --destructive-foreground: 220 15% 80%;
+    --border: 220 25% 28%;
+    --input: 220 25% 28%;
+    --ring: 220 40% 30%;
+    --radius: 0.5rem;
+  }
+
+  .Sanguine {
+    --background: 0 60% 10%;
+    --foreground: 0 30% 85%;
+    --card: 0 60% 10%;
+    --card-foreground: 0 30% 85%;
+    --popover: 0 60% 6%;
+    --popover-foreground: 0 30% 85%;
+    --primary: 0 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 70% 25%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 70% 30%;
+    --muted-foreground: 0 30% 60%;
+    --accent: 0 70% 30%;
+    --accent-foreground: 0 30% 85%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 30% 85%;
+    --border: 0 60% 22%;
+    --input: 0 60% 22%;
+    --ring: 0 80% 50%;
+    --radius: 0.5rem;
+  }
+
+  .Midnight {
+    --background: 60 5% 5%;
+    --foreground: 60 5% 85%;
+    --card: 60 5% 5%;
+    --card-foreground: 60 5% 85%;
+    --popover: 60 5% 3%;
+    --popover-foreground: 60 5% 85%;
+    --primary: 60 20% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 10% 25%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 60 10% 30%;
+    --muted-foreground: 60 5% 60%;
+    --accent: 60 10% 30%;
+    --accent-foreground: 60 5% 85%;
+    --destructive: 60 30% 50%;
+    --destructive-foreground: 60 5% 85%;
+    --border: 60 5% 22%;
+    --input: 60 5% 22%;
+    --ring: 60 20% 50%;
     --radius: 0.5rem;
   }
 }

@@ -11,6 +11,7 @@ import { GearIcon } from "@radix-ui/react-icons";
 import { DeckStyle } from "./rows/DeckStyle";
 import { FormattedMessage } from "react-intl";
 import { Language } from "./rows/Language";
+import { Theme } from "./rows/Theme";
 
 const ROW = "flex items-center justify-between";
 const ICON_SIZE = 24;
@@ -33,6 +34,9 @@ export const Settings: FC = () => {
           </div>
           <div className={ROW}>
             <Language />
+          </div>
+          <div className={ROW}>
+            <Theme />
           </div>
         </DrawerFooter>
       </DrawerContent>
