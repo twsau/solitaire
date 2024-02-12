@@ -1,7 +1,0 @@
-pre-commit:
-  parallel: true
-  commands:
-    lint:
-      run: bun lint
-    test:
-      run: bun test
