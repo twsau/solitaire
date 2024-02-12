@@ -16,7 +16,7 @@ const ICON_SIZE = 24;
 export const Settings: FC = () => {
   return (
     <Drawer>
-      <DrawerTrigger className="text-foreground/50 hover:text-foreground transition-colors text-3xl">
+      <DrawerTrigger className="text-3xl text-foreground/50 transition-colors hover:text-foreground">
         <GearIcon height={ICON_SIZE} width={ICON_SIZE} />
       </DrawerTrigger>
       <DrawerContent>

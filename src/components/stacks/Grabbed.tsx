@@ -28,7 +28,7 @@ export const Grabbed: FC = memo(() => {
 
   return (
     <div
-      className="grid place-items-center rounded min-w-[68px] min-h-[100px] fixed animate-grabbed pointer-events-none"
+      className="pointer-events-none fixed grid min-h-[100px] min-w-[68px] animate-grabbed place-items-center rounded"
       style={{ left: cursor.x, top: cursor.y }}
     >
       <CardStack animate={false} cards={cards} spread />

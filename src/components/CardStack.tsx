@@ -36,7 +36,7 @@ export const CardStack: FC<Props> = ({
 
   return (
     <div
-      className="relative w-[68px] h-[168px]"
+      className="relative h-[168px] w-[68px]"
       onClick={() => {
         if (!grabbed.length) return;
         doubleClick ? quickMove(onDrop) : onDrop();
