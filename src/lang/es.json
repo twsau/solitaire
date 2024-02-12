@@ -1,8 +1,17 @@
 {
+  "4GlECi": "Construir cada fundación en orden ascendente, siguiendo el palo.",
+  "4YagBP": "Mover Ases a la fundación cuando estén disponibles.",
+  "At1Tf2": "Construir cuatro pilas de fundación, una para cada palo, desde el As hasta el Rey.",
   "D3idYv": "Configuración",
-  "Pe0ogR": "tema",
+  "I2vDQq": "Sacar una carta a la vez de la mano (arriba a la izquierda).",
+  "Pe0ogR": "Tema",
   "QZw9OL": "Solitario",
+  "RsSiRk": "Cómo jugar al Solitario",
+  "U5x/0c": "El juego se gana cuando todas las pilas de fundación están completas.",
+  "UlCkBr": "Mover cartas entre los tableaux (pilas inferiores) y organizarlas en orden descendente, alternando colores.",
+  "XTu2xp": "Usar cartas sacadas para construir en las pilas o mover a la fundación.",
+  "ZFG/86": "Colocar Reyes o cualquier secuencia que comience con un Rey en un tableau vacío.",
   "g5pX+a": "Acerca de",
-  "o/gK53": "baraja",
-  "y1Z3or": "idioma"
+  "o/gK53": "Baraja",
+  "y1Z3or": "Idioma"
 }
