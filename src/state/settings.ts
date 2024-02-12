@@ -10,7 +10,7 @@ interface Settings {
 const initialState: Settings = {
   deckStyle: 4,
   locale: "en",
-  theme: "Royal",
+  theme: "Classic",
 };
 
 export const useSettings = create<Settings>()(
