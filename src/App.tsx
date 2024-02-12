@@ -14,6 +14,7 @@ import { Grabbed } from "./components/stacks/Grabbed";
 import { FormattedMessage } from "react-intl";
 import { TranslationProvider } from "./providers/TranslationProvider";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import { HowToPlay } from "./components/HowToPlay";
 
 export const App = () => {
   const loading = useGame((state) => state.loading);
@@ -37,6 +38,7 @@ export const App = () => {
             <FormattedMessage defaultMessage="About" />
           </a>
           <div className="ml-auto" />
+          <HowToPlay />
           <Settings />
         </header>
         <div className="mx-auto max-w-lg pt-14">

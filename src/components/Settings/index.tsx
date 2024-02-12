@@ -12,9 +12,9 @@ import { DeckStyle } from "./rows/DeckStyle";
 import { FormattedMessage } from "react-intl";
 import { Language } from "./rows/Language";
 import { Theme } from "./rows/Theme";
+import { ICON_SIZE } from "@/constants";
 
 const ROW = "flex items-center justify-between";
-const ICON_SIZE = 24;
 
 export const Settings: FC = () => {
   return (
