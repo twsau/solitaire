@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -66,12 +66,29 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        card: {
+          from: {
+            transform: "scale(1.25) translateY(-25%)",
+          },
+        },
+        grabbed: {
+          from: {
+            transform: "translateY(-50%) translateX(-50%)",
+          },
+          to: {
+            opacity: "0.75",
+            transform:
+              "translateY(-50%) translateX(-50%) scale(0.75) rotate(12deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        grabbed: "grabbed 0.2s cubic-bezier(0.61, -0.8, 0.64, 1.57) forwards",
+        card: "card 0.2s cubic-bezier(0, -0.01, 0.4, -0.5)",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
