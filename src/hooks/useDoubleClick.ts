@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function useDoubleClick(delay = 300) {
   const [clickCount, setClickCount] = useState(0);
-  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+  const [timeoutId, setTimeoutId] = useState<Timer | null>(null);
 
   useEffect(() => {
     function handleClick() {
