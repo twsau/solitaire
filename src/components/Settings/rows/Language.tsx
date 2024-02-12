@@ -1,11 +1,12 @@
 import { Label } from "@/components/ui/label";
-import { Select, SelectItem } from "@/components/ui/select";
-import { setLocale, useSettings } from "@/state/settings";
 import {
+  Select,
   SelectContent,
+  SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@radix-ui/react-select";
+} from "@/components/ui/select";
+import { setLocale, useSettings } from "@/state/settings";
 import { FormattedMessage } from "react-intl";
 
 const LOCALES: Record<SupportedLocale, string> = {
@@ -31,8 +32,10 @@ export const Language = () => {
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
-          {Object.entries(LOCALES).map(([key, value]) => (
-            <SelectItem key={`select-locale-${key}`} value={value} />
+          {Object.entries(LOCALES).map(([locale, language]) => (
+            <SelectItem key={`select-locale-${locale}`} value={locale}>
+              {language}
+            </SelectItem>
           ))}
         </SelectContent>
       </Select>
