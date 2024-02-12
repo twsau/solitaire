@@ -1,17 +1,7 @@
 {
-  "D3idYv": {
-    "defaultMessage": "Settings"
-  },
-  "QZw9OL": {
-    "defaultMessage": "Solitaire"
-  },
-  "g5pX+a": {
-    "defaultMessage": "About"
-  },
-  "o/gK53": {
-    "defaultMessage": "Deck"
-  },
-  "y1Z3or": {
-    "defaultMessage": "Language"
-  }
+  "D3idYv": "Settings",
+  "QZw9OL": "Solitaire",
+  "g5pX+a": "About",
+  "o/gK53": "Deck",
+  "y1Z3or": "Language"
 }

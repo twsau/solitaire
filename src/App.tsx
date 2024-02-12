@@ -12,6 +12,7 @@ import { Foundation } from "./components/stacks/Foundation";
 import { Tableau } from "./components/stacks/Tableau";
 import { Grabbed } from "./components/stacks/Grabbed";
 import { FormattedMessage } from "react-intl";
+import { TranslationProvider } from "./providers/TranslationProvider";
 
 export const App = () => {
   const loading = useGame((state) => state.loading);
@@ -22,7 +23,7 @@ export const App = () => {
 
   if (loading) return <Loading />;
   return (
-    <>
+    <TranslationProvider>
       <header className="container flex h-14 items-center gap-3 border-b">
         <h1>
           <FormattedMessage defaultMessage="Solitaire" />
@@ -57,6 +58,6 @@ export const App = () => {
         </div>
         <Grabbed />
       </div>
-    </>
+    </TranslationProvider>
   );
 };
