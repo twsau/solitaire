@@ -10,10 +10,10 @@ import { setLocale, useSettings } from "@/state/settings";
 import { FormattedMessage } from "react-intl";
 
 const LOCALES: Record<SupportedLocale, string> = {
-  de: "German",
+  de: "Deutsch",
   en: "English",
-  es: "Spanish",
-  fr: "French",
+  es: "Español",
+  fr: "Français",
 };
 
 export const Language = () => {
