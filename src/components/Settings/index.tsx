@@ -30,13 +30,13 @@ export const Settings: FC = () => {
         </DrawerHeader>
         <DrawerFooter>
           <div className={ROW}>
-            <DeckStyle />
-          </div>
-          <div className={ROW}>
             <Language />
           </div>
           <div className={ROW}>
             <Theme />
+          </div>
+          <div className={ROW}>
+            <DeckStyle />
           </div>
         </DrawerFooter>
       </DrawerContent>
