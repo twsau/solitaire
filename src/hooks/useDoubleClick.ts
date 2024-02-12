@@ -13,7 +13,7 @@ export default function useDoubleClick(delay = 300) {
             setClickCount(0);
           }, delay)
         );
-      } else setTimeoutId(setTimeout(() => setClickCount(0), 300));
+      }
     }
 
     document.addEventListener("click", handleClick);
