@@ -1,6 +1,6 @@
 import { useSettings } from "@/state/settings";
 import { cn } from "@/lib/utils";
-import { FC, memo } from "react";
+import { type FC, memo } from "react";
 
 interface Props {
   card: Card;
@@ -15,6 +15,7 @@ export const Card: FC<Props> = memo(({ card }) => {
         "w-[68px] h-[100px] bg-cover select-none cursor-grab",
         card.facing === "up" ? "hover:scale-105 transition-transform" : ""
       )}
+      type="button"
     >
       <img
         alt={
@@ -22,14 +23,15 @@ export const Card: FC<Props> = memo(({ card }) => {
             ? `${card.value} of ${card.suit}`
             : "playing card"
         }
+        className="mx-auto"
         draggable={false}
-        height={100}
+        height={card.facing === "up" ? 98 : 100}
         src={
           card.facing === "up"
             ? `/cards/${card.suit}/${card.value}.png`
             : `/cards/backs/${deckStyle}.png`
         }
-        width={68}
+        width={card.facing === "up" ? 66 : 68}
       />
     </button>
   );

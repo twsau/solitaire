@@ -2,7 +2,6 @@ import { FormattedMessage } from "react-intl";
 import { HowToPlay } from "./HowToPlay";
 import { Settings } from "./Settings";
 import { NewGame } from "./NewGame";
-import { Joke } from "./Joke";
 import { QuestionMarkCircledIcon } from "@radix-ui/react-icons";
 import { ICON_SIZE } from "@/constants";
 
@@ -15,7 +14,6 @@ export const Header = () => {
       <NewGame />
       <HowToPlay />
       <div className="ml-auto" />
-      <Joke />
       <a
         className="text-3xl text-foreground/50 transition-colors hover:text-foreground"
         href="https://bossweb.dev/projects/solitaire#content"

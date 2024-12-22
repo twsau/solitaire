@@ -23,6 +23,7 @@ export const App = () => {
   }, []);
 
   if (loading) return <Loading />;
+
   return (
     <TranslationProvider>
       <ThemeProvider>
