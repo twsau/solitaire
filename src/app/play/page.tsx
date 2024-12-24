@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 export default function PlayPage() {
   return (
     <>
-      <Header items={{ right: ["Settings"] }} />
+      <Header items={{ left: ["HowToPlay"], right: ["Settings"] }} />
     </>
   );
 }
