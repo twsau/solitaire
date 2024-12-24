@@ -4,7 +4,7 @@ import { Game } from "./Game";
 export default function PlayPage() {
   return (
     <>
-      <Header items={{ right: ["HowToPlay"] }} />
+      <Header items={{ left: ["NewGame"], right: ["HowToPlay"] }} />
       <Game />
     </>
   );

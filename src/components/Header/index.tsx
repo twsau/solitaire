@@ -1,10 +1,11 @@
 import { useMemo, type FC, type JSX } from "react";
-import { HowToPlay, Settings } from "./items";
+import { HowToPlay, NewGame, Settings } from "./items";
 
-type HeaderItem = "HowToPlay" | "Settings";
+type HeaderItem = "HowToPlay" | "NewGame" | "Settings";
 
 const headerItemMap: Record<HeaderItem, () => JSX.Element> = {
   HowToPlay,
+  NewGame,
   Settings,
 };
 
