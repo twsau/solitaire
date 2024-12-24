@@ -12,9 +12,15 @@ export default function HomePage() {
           <CardHeader>
             <CardTitle className="text-center">Solitaire</CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-col items-center">
-            <Link href="play">
-              <Button>Play</Button>
+          <CardContent className="flex flex-col items-center gap-3">
+            <Link className="w-full" href="play">
+              <Button className="w-full">Play</Button>
+            </Link>
+            <Link
+              className="w-full"
+              href="https://bossweb.dev/projects/solitaire"
+            >
+              <Button className="w-full">About</Button>
             </Link>
           </CardContent>
         </Card>
