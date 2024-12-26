@@ -5,7 +5,7 @@ import newGame from "@/utils/newGame";
 
 interface GameState {
 	grabbed: Card[];
-	grabbedFrom: null;
+	grabbedFrom: string;
 	hand: Card[];
 	waste: Card[];
 	tableau_1: Card[];
@@ -26,7 +26,7 @@ const useGameStore = create<GameState>()(
 		temporal(
 			() => ({
 				grabbed: [] as Card[],
-				grabbedFrom: null,
+				grabbedFrom: "", // "" is null?
 				hand: [] as Card[],
 				waste: [] as Card[],
 				tableau_1: [] as Card[],
