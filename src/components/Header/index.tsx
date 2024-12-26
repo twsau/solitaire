@@ -37,7 +37,7 @@ export const Header: FC<Props> = ({ items }) => {
   }, [items.right]);
 
   return (
-    <header className="flex h-14 items-center gap-3 border-b px-5">
+    <header className="flex h-14 items-center gap-3 border-b px-5 fixed top-0 w-full z-10">
       <h1>Solitaire</h1>
       <div className="mr-auto">{contentLeft}</div>
       <div className="ml-auto">{contentRight}</div>
